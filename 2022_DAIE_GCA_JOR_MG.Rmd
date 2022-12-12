@@ -1,0 +1,70 @@
+---
+title: "DAIE Pair Project"
+author: "Joe O'Regan and Michael Galbraith"
+date: "2022-12-12"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Data Analytics and Immersive Environments - Pair Project
+### Joe O'Regan and Michael Galbraith
+
+**Repo:** <https://github.com/joeaoregan/2022_DAIE_GCA_JOR_MG>
+
+
+
+```{r Load & View, echo=TRUE}
+
+library(readr)
+data5 <-read_csv("daie_ca3_data_5.csv")
+#View(data5)
+#head(data5, 10)
+
+pre_trial_cpss_mean <- mean(data5$pre_trial_cpss)
+pre_trial_cpss_mean
+pre_trial_cpss_std <- sd(data5$pre_trial_cpss)
+pre_trial_cpss_std
+pre_trial_cpss <- rnorm(150, pre_trial_cpss_mean, pre_trial_cpss_std)
+hist(pre_trial_cpss)
+
+# clean data? 1 value missing for this variable
+#post_trial_cpss_mean <- mean(data5$post_trial_cpss)
+#post_trial_cpss_mean
+#post_trial_cpss_std <- sd(data5$post_trial_cpss)
+#post_trial_cpss_std
+#post_trial_cpss <- rnorm(150, post_trial_cpss_mean, post_trial_cpss_std)
+#hist(post_trial_cpss)
+
+pre_trial_or_mean <- mean(data5$pre_trial_or)
+pre_trial_or_mean
+pre_trial_or_sd <- sd(data5$pre_trial_or)
+pre_trial_or_sd
+pre_trial_or <- rnorm(150, pre_trial_or_mean, pre_trial_or_sd)
+hist(pre_trial_or)
+
+post_trial_or_mean <- mean(data5$post_trial_or)
+post_trial_or_mean
+post_trial_or_sd <- sd(data5$post_trial_or)
+post_trial_or_sd
+post_trial_or <- rnorm(150, post_trial_or_mean, post_trial_or_sd)
+hist(post_trial_or)
+
+
+```
+
+
+## Random Plots
+
+Testing plots
+
+```{r data5, echo=FALSE}
+plot(data5$pre_trial_cpss)
+#plot(data5$post_trial_cpss) # clean data
+plot(data5$pre_trial_or)
+plot(data5$post_trial_or)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
