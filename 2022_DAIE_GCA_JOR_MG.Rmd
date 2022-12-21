@@ -1,79 +1,18 @@
 ---
-title: "DAIE Pair Project"
+title: "1. DAIE Pair Project"
 author: "Joe O'Regan and Michael Galbraith"
 date: "2022-12-12"
-output: html_document
+output:
+  html_notebook:
+    theme: darkly
+    toc: yes
+    toc_depth: 2
+    #number_sections: true # numbers instead of bullet points
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-## 1. Data Analytics and Immersive Environments - Pair Project
-### Joe O'Regan and Michael Galbraith
-
-**Repo:** <https://github.com/joeaoregan/2022_DAIE_GCA_JOR_MG>
-
-## 2. Table of Contents
-
-## 3. Abstract
-
-### - Aim and Rationale
-### - Participants and Setting
-### - Experiment Design
-### - Results Gathering
-### - Major Findings
-### - Findings / Implications
-
-## 4. Introduction
-
-### - Topic and Context
-### - Rationale
-### - Hypothesis
-
-
-## 5. Method
-
-### - Participants
-### - Design
-### - Materials
-### - Procedure
-
-## 6. Results
-
-### - Descriptive Statistics
-
-Measures of central tendency
-
-* mean
-* median
-* mode
-
-Measures of variability
-
-* standard deviation
-* variance
-* minimum and maximum variables
-
-### - Inferential Statistics
-### - Statistical Tests
-### - Magnitude and Direction of Results
-
-## 7. Discussion
-
-### - Outline Findings and Relation to the Hypothesis
-### - Limitations (If confounding variables are clearly identified by your group)
-
-## 8. References
-
-M., D., D., C. and Çetinkaya-Rundel, M., 2019. OpenIntro Statistics. OpenIntro, Incorporated.
-
-OpenIntro Statistics. 2022. OpenIntro Statistics. [ONLINE] Available at: https://www.openintro.org/book/os/. [Accessed 21 December 2022].
-
-
-
-## Misc
-
 
 
 ```{r Load & View, echo=TRUE}
@@ -84,6 +23,64 @@ View(data5)
 #head(data5, 10)
 ```
 
+**Repo:** <https://github.com/joeaoregan/2022_DAIE_GCA_JOR_MG>
+
+# Title
+# Table of Contents
+# Abstract {.tabset}
+
+(tab content)
+
+## Aim and Rationale
+
+(tab content)
+
+## Participants and Setting
+
+(tab content)
+
+## Experiment Design
+
+(tab content)
+
+## Results Gathering
+
+(tab content)
+
+## Major Findings
+
+(tab content)
+
+## Findings / Implications
+
+(tab content)
+
+
+# Introduction
+
+## Topic and Context
+## Rationale
+## Hypothesis
+
+
+# Method
+
+## - Participants
+## - Design
+## - Materials
+## - Procedure
+
+# Results
+
+## - Descriptive Statistics
+
+Measures of central tendency
+
+* mean
+
+##### mean()
+##### trim - drops values - 0.3, drops 3 values from each end
+##### <data>.mean <- mean(<variable>, trim = 0.3)
 
 
 ```{r}
@@ -118,6 +115,81 @@ hist(post_trial_or)
 
 
 ```
+
+* median
+
+```{r}
+pre_trial_cpss_mode <- mean(data5$pre_trial_cpss)
+pre_trial_cpss_mean
+pre_trial_cpss_std <- sd(data5$pre_trial_cpss)
+pre_trial_cpss_std
+pre_trial_cpss <- rnorm(150, pre_trial_cpss_mean, pre_trial_cpss_std)
+hist(pre_trial_cpss)
+
+# clean data? 1 value missing for this variable
+#post_trial_cpss_mean <- mean(data5$post_trial_cpss)
+# na.rm - removes null values
+post_trial_cpss_mean <- mean(data5$post_trial_cpss, na.rm = TRUE)
+#post_trial_cpss_mean
+#post_trial_cpss_std <- sd(data5$post_trial_cpss)
+#post_trial_cpss_std
+#post_trial_cpss <- rnorm(150, post_trial_cpss_mean, post_trial_cpss_std)
+#hist(post_trial_cpss)
+
+pre_trial_or_mean <- mean(data5$pre_trial_or)
+pre_trial_or_mean
+pre_trial_or_sd <- sd(data5$pre_trial_or)
+pre_trial_or_sd
+pre_trial_or <- rnorm(150, pre_trial_or_mean, pre_trial_or_sd)
+hist(pre_trial_or)
+
+post_trial_or_mean <- mean(data5$post_trial_or)
+post_trial_or_mean
+post_trial_or_sd <- sd(data5$post_trial_or)
+post_trial_or_sd
+post_trial_or <- rnorm(150, post_trial_or_mean, post_trial_or_sd)
+hist(post_trial_or)
+
+
+```
+
+* mode
+
+Measures of variability
+
+* standard deviation
+* variance
+* minimum and maximum variables
+
+## - Inferential Statistics
+chapter 7?
+## - Statistical Tests
+## - Magnitude and Direction of Results
+
+# Discussion
+
+## - Outline Findings and Relation to the Hypothesis
+## - Limitations (If confounding variables are clearly identified by your group)
+
+# References
+
+**OpenIntro Statistics:**
+
+M., D., D., C. and Çetinkaya-Rundel, M., 2019. OpenIntro Statistics. OpenIntro, Incorporated.
+
+OpenIntro Statistics. 2022. OpenIntro Statistics. [ONLINE] Available at: https://www.openintro.org/book/os/. [Accessed 21 December 2022].
+
+**Tutorialspoint:**
+
+R Tutorial. 2022. R Tutorial. [ONLINE] Available at: https://www.tutorialspoint.com/r/index.htm. [Accessed 21 December 2022].
+
+**Table of Contents:**
+
+Yihui Xie, J. J. Allaire, Garrett Grolemund. 2022. 3.1 HTML document | R Markdown: The Definitive Guide. [ONLINE] Available at: https://bookdown.org/yihui/rmarkdown/html-document.html. [Accessed 21 December 2022].
+# Misc
+
+
+
 
 
 ## Random Plots
