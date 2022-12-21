@@ -27,33 +27,19 @@ View(data5)
 
 # Title
 # Table of Contents
-# Abstract {.tabset}
-
-(tab content)
+# Abstract
 
 ## Aim and Rationale
 
-(tab content)
-
 ## Participants and Setting
-
-(tab content)
 
 ## Experiment Design
 
-(tab content)
-
 ## Results Gathering
-
-(tab content)
 
 ## Major Findings
 
-(tab content)
-
 ## Findings / Implications
-
-(tab content)
 
 
 # Introduction
@@ -65,14 +51,14 @@ View(data5)
 
 # Method
 
-## - Participants
-## - Design
-## - Materials
-## - Procedure
+## Participants
+## Design
+## Materials
+## Procedure
 
 # Results
 
-## - Descriptive Statistics
+## Descriptive Statistics
 
 Measures of central tendency
 
@@ -161,15 +147,17 @@ Measures of variability
 * variance
 * minimum and maximum variables
 
-## - Inferential Statistics
+## Inferential Statistics
+
 chapter 7?
-## - Statistical Tests
-## - Magnitude and Direction of Results
+
+## Statistical Tests
+## Magnitude and Direction of Results
 
 # Discussion
 
-## - Outline Findings and Relation to the Hypothesis
-## - Limitations (If confounding variables are clearly identified by your group)
+## Outline Findings and Relation to the Hypothesis
+## Limitations (If confounding variables are clearly identified by your group)
 
 # References
 
@@ -186,11 +174,8 @@ R Tutorial. 2022. R Tutorial. [ONLINE] Available at: https://www.tutorialspoint.
 **Table of Contents:**
 
 Yihui Xie, J. J. Allaire, Garrett Grolemund. 2022. 3.1 HTML document | R Markdown: The Definitive Guide. [ONLINE] Available at: https://bookdown.org/yihui/rmarkdown/html-document.html. [Accessed 21 December 2022].
+
 # Misc
-
-
-
-
 
 ## Random Plots
 
