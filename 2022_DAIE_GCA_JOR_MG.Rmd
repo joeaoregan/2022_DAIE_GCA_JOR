@@ -9,10 +9,70 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Data Analytics and Immersive Environments - Pair Project
+## 1. Data Analytics and Immersive Environments - Pair Project
 ### Joe O'Regan and Michael Galbraith
 
 **Repo:** <https://github.com/joeaoregan/2022_DAIE_GCA_JOR_MG>
+
+## 2. Table of Contents
+
+## 3. Abstract
+
+### - Aim and Rationale
+### - Participants and Setting
+### - Experiment Design
+### - Results Gathering
+### - Major Findings
+### - Findings / Implications
+
+## 4. Introduction
+
+### - Topic and Context
+### - Rationale
+### - Hypothesis
+
+
+## 5. Method
+
+### - Participants
+### - Design
+### - Materials
+### - Procedure
+
+## 6. Results
+
+### - Descriptive Statistics
+
+Measures of central tendency
+
+* mean
+* median
+* mode
+
+Measures of variability
+
+* standard deviation
+* variance
+* minimum and maximum variables
+
+### - Inferential Statistics
+### - Statistical Tests
+### - Magnitude and Direction of Results
+
+## 7. Discussion
+
+### - Outline Findings and Relation to the Hypothesis
+### - Limitations (If confounding variables are clearly identified by your group)
+
+## 8. References
+
+M., D., D., C. and Çetinkaya-Rundel, M., 2019. OpenIntro Statistics. OpenIntro, Incorporated.
+
+OpenIntro Statistics. 2022. OpenIntro Statistics. [ONLINE] Available at: https://www.openintro.org/book/os/. [Accessed 21 December 2022].
+
+
+
+## Misc
 
 
 
@@ -20,9 +80,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 library(readr)
 data5 <-read_csv("daie_ca3_data_5.csv")
-#View(data5)
+View(data5)
 #head(data5, 10)
+```
 
+
+
+```{r}
 pre_trial_cpss_mean <- mean(data5$pre_trial_cpss)
 pre_trial_cpss_mean
 pre_trial_cpss_std <- sd(data5$pre_trial_cpss)
