@@ -1,0 +1,22 @@
+library(readr)
+data5 <-read_csv("daie_ca3_data_5.csv")
+##view(data5)
+
+glimpse(data5)
+unique(data5$gender)
+unique(data5$test_group)
+
+mean(data5$pre_trial_cpss)
+mean(data5$post_trial_cpss, na.rm = TRUE)
+mean(data5$pre_trial_or)
+mean(data5$post_trial_or)
+
+data5 %>%
+  select(gender, test_group, pre_trial_cpss, post_trial_cpss, pre_trial_or, post_trial_or) %>%
+  ##filter(!complete.cases(.)) %>%
+  drop_na(post_trial_cpss)
+
+data5 %>%
+  select(gender, test_group, pre_trial_cpss, post_trial_cpss, pre_trial_or, post_trial_or) %>%
+  ##mutate(gender = recode(gender, "Feale" = Female)) %>%
+  view()
