@@ -2,3 +2,6 @@
 # 12/12/2022
 *.html
 .Rproj.user
+test.R
+.Rhistory
+.RData

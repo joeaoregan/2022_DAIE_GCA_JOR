@@ -7,7 +7,10 @@ output:
     theme: darkly
     toc: yes
     toc_depth: 2
-    #number_sections: true # numbers instead of bullet points
+  html_document:
+    toc: yes
+    toc_depth: '2'
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
@@ -29,6 +32,8 @@ View(data5)
 # Table of Contents
 # Abstract
 
+summary of the contents
+
 ## Aim and Rationale
 
 ## Participants and Setting
@@ -49,6 +54,7 @@ View(data5)
 ## Hypothesis
 
 
+
 # Method
 
 ## Participants
@@ -59,6 +65,23 @@ View(data5)
 # Results
 
 ## Descriptive Statistics
+
+plots/charts
+e.g. boxplot
+
+* clean it - get rid of errors
+* identify outliers
+* plot the graph
+  - bar plots
+  - box plots
+  - histograms
+  - scatterplots
+  
+* once we plot, look at things we can begin to explore data
+* begin to develop hypothesis
+* then run an experiment
+* infer something from experiment
+
 
 Measures of central tendency
 
@@ -72,14 +95,16 @@ Measures of central tendency
 ```{r}
 pre_trial_cpss_mean <- mean(data5$pre_trial_cpss)
 pre_trial_cpss_mean
+
 pre_trial_cpss_std <- sd(data5$pre_trial_cpss)
 pre_trial_cpss_std
 pre_trial_cpss <- rnorm(150, pre_trial_cpss_mean, pre_trial_cpss_std)
 hist(pre_trial_cpss)
 
 # clean data? 1 value missing for this variable
-#post_trial_cpss_mean <- mean(data5$post_trial_cpss)
-#post_trial_cpss_mean
+
+post_trial_cpss_mean <- mean(data5$post_trial_cpss)
+post_trial_cpss_mean
 #post_trial_cpss_std <- sd(data5$post_trial_cpss)
 #post_trial_cpss_std
 #post_trial_cpss <- rnorm(150, post_trial_cpss_mean, post_trial_cpss_std)
@@ -151,12 +176,23 @@ Measures of variability
 
 chapter 7?
 
+Taking a sample and inferring something in the population
+Probability of something
+Generalise sample statistic to population
+- mean response in population is x
+- believe with % certainty
+
 ## Statistical Tests
 ## Magnitude and Direction of Results
 
 # Discussion
 
 ## Outline Findings and Relation to the Hypothesis
+
+??? Hypothesis testing conclusion ???
+change in anxiety over time +
+compare 3 groups
+
 ## Limitations (If confounding variables are clearly identified by your group)
 
 # References
@@ -176,6 +212,35 @@ R Tutorial. 2022. R Tutorial. [ONLINE] Available at: https://www.tutorialspoint.
 Yihui Xie, J. J. Allaire, Garrett Grolemund. 2022. 3.1 HTML document | R Markdown: The Definitive Guide. [ONLINE] Available at: https://bookdown.org/yihui/rmarkdown/html-document.html. [Accessed 21 December 2022].
 
 # Misc
+
+## column names
+
+* gender
+* test_group
+* pre_trial_cpss
+* post_trial_cpss
+* pre_trial_or
+* post_trial_or
+
+
+```{r}
+unique_values_in_gender <- unique(data5$gender)
+unique_values_in_gender
+```
+
+"Feale" needs to be changed to "Female"
+
+```{r}
+unique_values_in_test_group <- unique(data5$test_group)
+unique_values_in_test_group
+
+```
+
+"Anmated" needs to be changed to "Animated"
+
+## cleaning
+
+
 
 ## Random Plots
 
