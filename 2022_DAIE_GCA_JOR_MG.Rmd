@@ -211,6 +211,11 @@ R Tutorial. 2022. R Tutorial. [ONLINE] Available at: https://www.tutorialspoint.
 
 Yihui Xie, J. J. Allaire, Garrett Grolemund. 2022. 3.1 HTML document | R Markdown: The Definitive Guide. [ONLINE] Available at: https://bookdown.org/yihui/rmarkdown/html-document.html. [Accessed 21 December 2022].
 
+**Cleaning Data**
+
+R Programming 101 (YouTube). 2022. Clean your data with R. R programming for beginners. - YouTube. [ONLINE] Available at: https://youtu.be/sV5lwAJ7vnQ. [Accessed 22 December 2022].
+
+
 # Misc
 
 ## column names
