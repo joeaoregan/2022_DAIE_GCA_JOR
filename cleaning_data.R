@@ -77,7 +77,7 @@ raw_data <-read_csv("daie_ca3_data_5.csv") # read raw data from csv
 
 data <- raw_data %>% 
   select(...1, gender, test_group, pre_trial_cpss, post_trial_cpss, pre_trial_or, post_trial_or) %>%
-  distinct() %>% # remove duplicates
+  distinct() %>% # remove duplicates (none anyway)
   filter(complete.cases(.)) %>% # remove rows with incomplete data
   mutate(gender = recode(gender, "Feale" = "Female")) %>% # change type
   mutate(test_group = recode(test_group, "Anmated" = "Animated")) 
