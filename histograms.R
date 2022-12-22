@@ -94,3 +94,30 @@ hist(control_group$or_diff,
      main = "Control Group - Observer Rated PTSD Level (12 Week Difference) Male & Female",
      xlab = "Observer Rated Difference",
      ylab = "Patient Rating Difference Frequency")
+
+
+## Female Control Group Members
+
+control_female <- filter(control_group, gender == "Female")
+View(control_female)
+
+hist(control_female$cpss_diff,
+     main = "Female Control Group Self-Report PTSD Level (12 Week Difference)",
+     xlab = "12 Week Self-Report Measurement Difference",
+     ylab = "Female Patient Rating Diff. Frequency")
+
+hist(control_female$or_diff,
+     main = "Female Control Group Observer Rated PTSD Level (12 Week Difference)",
+     xlab = "12 Week Observer Rated Measurement Difference",
+     ylab = "Female Patient Rating Diff. Frequency")
+
+## Male Control Group Members
+
+control_male <- filter(control_group, gender == "Male")
+View(control_male)
+
+hist(control_male$cpss_diff,
+     main = "Male Control Group Self-Report PTSD Level (12 Week Difference)",
+     xlab = "12 Week Self-Report Measurement Difference",
+     ylab = "Male Patient Rating Diff. Frequency")
+
