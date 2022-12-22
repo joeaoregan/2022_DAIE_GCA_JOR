@@ -86,13 +86,15 @@ animated_cpss_median<- getmode(animated_group$cpss_diff)
 animated_or_median <- getmode(animated_group$or_diff)
 
 
+## Control Group Diff Histogram
+
 hist(control_group$cpss_diff,
-     main = "Control Group - Self-Report PTSD Level (12 Week Difference) Male & Female",
+     main = "Control Group Self-Report PTSD Level (12 Week Difference) Male & Female",
      xlab = "12 Week Self-Report Measurement Difference",
      ylab = "Patient Rating Difference Frequency")
 hist(control_group$or_diff,
-     main = "Control Group - Observer Rated PTSD Level (12 Week Difference) Male & Female",
-     xlab = "Observer Rated Difference",
+     main = "Control Group Observer Rated PTSD Level (12 Week Difference) Male & Female",
+     xlab = "12 Week Observer Rated Measurement Difference",
      ylab = "Patient Rating Difference Frequency")
 
 
@@ -111,6 +113,7 @@ hist(control_female$or_diff,
      xlab = "12 Week Observer Rated Measurement Difference",
      ylab = "Female Patient Rating Diff. Frequency")
 
+
 ## Male Control Group Members
 
 control_male <- filter(control_group, gender == "Male")
@@ -121,3 +124,95 @@ hist(control_male$cpss_diff,
      xlab = "12 Week Self-Report Measurement Difference",
      ylab = "Male Patient Rating Diff. Frequency")
 
+hist(control_male$or_diff,
+     main = "Male Control Group Observer Rated PTSD Level (12 Week Difference)",
+     xlab = "12 Week Observer Rated Measurement Difference",
+     ylab = "Male Patient Rating Diff. Frequency")
+
+
+## Static Group Diff Histogram
+
+hist(static_group$cpss_diff,
+     main = "Static Group Self-Report PTSD Level (12 Week Difference) Male & Female",
+     xlab = "12 Week Self-Report Measurement Difference",
+     ylab = "Patient Rating Difference Frequency")
+hist(static_group$or_diff,
+     main = "Static Group Observer Rated PTSD Level (12 Week Difference) Male & Female",
+     xlab = "12 Week Observer Rated Measurement Difference",
+     ylab = "Patient Rating Difference Frequency")
+
+
+## Female Static Group Members
+
+static_female <- filter(static_group, gender == "Female")
+View(static_female)
+
+hist(static_female$cpss_diff,
+     main = "Female Static Group Self-Report PTSD Level (12 Week Difference)",
+     xlab = "12 Week Self-Report Measurement Difference",
+     ylab = "Female Patient Rating Diff. Frequency")
+
+hist(control_female$or_diff,
+     main = "Female Static Group Observer Rated PTSD Level (12 Week Difference)",
+     xlab = "12 Week Observer Rated Measurement Difference",
+     ylab = "Female Patient Rating Diff. Frequency")
+
+
+## Male Static Group Members
+
+static_male <- filter(static_group, gender == "Male")
+View(static_male)
+
+hist(static_male$cpss_diff,
+     main = "Male Static Group Self-Report PTSD Level (12 Week Difference)",
+     xlab = "12 Week Self-Report Measurement Difference",
+     ylab = "Male Patient Rating Diff. Frequency")
+
+hist(static_male$or_diff,
+     main = "Male Static Group Observer Rated PTSD Level (12 Week Difference)",
+     xlab = "12 Week Observer Rated Measurement Difference",
+     ylab = "Male Patient Rating Diff. Frequency")
+
+
+## Animated Group Diff Histogram
+
+hist(animated_group$cpss_diff,
+     main = "Animated Group Self-Report PTSD Level (12 Week Difference) Male & Female",
+     xlab = "12 Week Self-Report Measurement Difference",
+     ylab = "Patient Rating Difference Frequency")
+hist(animated_group$or_diff,
+     main = "Animated Group Observer Rated PTSD Level (12 Week Difference) Male & Female",
+     xlab = "12 Week Observer Rated Measurement Difference",
+     ylab = "Patient Rating Difference Frequency")
+
+
+## Female Animated Group Members
+
+animated_female <- filter(animated_group, gender == "Female")
+View(animated_female)
+
+hist(animated_female$cpss_diff,
+     main = "Female Animated Group Self-Report PTSD Level (12 Week Difference)",
+     xlab = "12 Week Self-Report Measurement Difference",
+     ylab = "Female Patient Rating Diff. Frequency")
+
+hist(animated_female$or_diff,
+     main = "Female Animated Group Observer Rated PTSD Level (12 Week Difference)",
+     xlab = "12 Week Observer Rated Measurement Difference",
+     ylab = "Female Patient Rating Diff. Frequency")
+
+
+## Male Animated Group Members
+
+animated_male <- filter(animated_group, gender == "Male")
+View(animated_male)
+
+hist(animated_male$cpss_diff,
+     main = "Male Animated Group Self-Report PTSD Level (12 Week Difference)",
+     xlab = "12 Week Self-Report Measurement Difference",
+     ylab = "Male Patient Rating Diff. Frequency")
+
+hist(animated_male$or_diff,
+     main = "Male Animated Group Observer Rated PTSD Level (12 Week Difference)",
+     xlab = "12 Week Observer Rated Measurement Difference",
+     ylab = "Male Patient Rating Diff. Frequency")
