@@ -96,6 +96,19 @@ typos
 ```
 
 
+* **Clean Data**
+  + fix types: row 125 "Anmated" becomes "Animated, row 148 "Feale" becomes "Female
+  + remove row 73 with missing data, as this could skew the results
+
+```{r}
+data <- raw_data %>% 
+  select(X, gender, test_group, pre_trial_cpss, post_trial_cpss, pre_trial_or, post_trial_or) %>%
+  distinct() %>% # remove duplicates (none anyway)
+  filter(complete.cases(.)) %>% # remove rows with incomplete data
+  mutate(gender = recode(gender, "Feale" = "Female")) %>% # change type
+  mutate(test_group = recode(test_group, "Anmated" = "Animated")) 
+data
+```
 
 
 # Abstract
