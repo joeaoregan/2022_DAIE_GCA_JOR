@@ -3,14 +3,14 @@ title: "1. DAIE Pair Project"
 author: "Joe O'Regan and Michael Galbraith"
 date: "2022-12-12"
 output:
-  html_notebook:
-    theme: darkly
-    toc: yes
-    toc_depth: 2
   html_document:
     toc: yes
     toc_depth: '2'
     df_print: paged
+  html_notebook:
+    theme: darkly
+    toc: yes
+    toc_depth: 2
 ---
 
 ```{r setup, include=FALSE}
@@ -50,7 +50,10 @@ summary of the contents
 # Introduction
 
 ## Topic and Context
+MG:
+Post‐traumatic stress disorder (PTSD) is arguably the most common psychiatric disorder to arise after exposure to a traumatic event. Trauma‐focused cognitive behaviour therapy is the best‐validated treatment for PTSD, it has stagnated over recent decades, and only two‐thirds of PTSD patients respond adequately to this intervention. Moreover, most people with PTSD do not access evidence‐based treatment, and this situation is much worse in low‐ and middle‐income countries. Identifying processes that can overcome these major barriers to better management of people with PTSD remains an outstanding challenge.
 
+JOG:
 Observer-Rated and Self-Report methods of measuring patient PTSD/anxiety levels were used to assess patient PTSD levels across three groups of fifty patients. Each group has an equal numbers of Male and Female participant, twenty-five each. 
 
 The age range for this hypothetical situation doesn't matter as it hasn't been recorded, but I suppose if this was a real world situation there might be some ethical issues, but it's not sure it's all made up as far as I know. 
@@ -81,13 +84,22 @@ There was a 12 week interval between the pre and post trial measurements, or the
 
 
 ## Rationale
+MG:
+CBT addresses the here and now of PTSD symptoms, it doesn’t necessarily go back over the initial cause of the PTSD. That is something other types of therapies can explore with you. CBT helps you to adjust and re-align negative thoughts, feelings and behaviours that stop you from enjoying a good quality of life.
+We aim to explore the effectiveness of virtual reality-assisted cognitive behavioural therapy (VRCBT) in the treatment of patients with PTSD. We further compare the therapeutic effect of VRCBT with that of standard cognitive behavioural therapy (CBT).
 
+JOR:
 Kind of simple. We only have a small amount of information, the change in PTSD Levels after 12 weeks, with one possible variable gender that may influence the outcome. Using 3 different treatment methods, with 2 different ratings. 
 
 So, we would expect there is either some change, or no change after 12 weeks. Each of the methods may have different outcomes, and the gender of the patients may be a factor in how they respond to each treatment, or to treatment in general by any of the 3 treatments.
 
 ## Hypothesis
+MG:
+Null hypothesis: there is no difference in terms of CPSS scores betweeen the animated group and control group, or the static group and the control group
+Alternative hypothesis: there is a significant difference in terms of CPSS scores between the animated group and control group, or the static group and the control group
 
+
+JOR:
 Average PTSD levels for both observer rated and self-reported should improve over a 12 week period.
 
 H0 (Null hypothesis): 
@@ -97,9 +109,22 @@ H1 (Alternative):
 # Method
 
 ## Participants
+The participants involved in the study were all young adults with PTSD in the age range of 18 - 25 years. There were 150 students, equally divided into 75 males and 75 females.
+
 ## Design
+The patients were allocated into one of three groups; 
+- Control, static (traditional CBT, no VR)
+- Static (non-animated model content, VR) 
+- Animated (animated model content, VR)
+
+Non-animated means the objects in the virtual environment would be still and not interact.
+Animated means when you add objects onto the Jungian Sandplay they would interact and move around the environment
+
 ## Materials
+The 3 groups underwent 12 weeks of treatment for 50 minutes per week with a therapist. During that time the patients either underwent traditional CBT; or used one of the two (quality) versions of the VR app.
+
 ## Procedure
+During the study, PTSD was assessed using observer-rated (i.e., therapist-rated) and self-report (i.e., Child PTSD Symptom Scale Self-Report Version (CPSS-SR)) measurements, respectively. Both measurements are scaled to the range of 0 to 10. Measurements were taken at the start and end of the study.
 
 # Results
 
@@ -267,6 +292,9 @@ R Programming 101 (YouTube). 2022. Doing a t-test using R programming (in 4 minu
 
 Markdown Basics. 2022. Markdown Basics. [ONLINE] Available at: https://rmarkdown.rstudio.com/authoring_basics.html. [Accessed 23 December 2022].
 
+**PTSD and CBT research**
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6732680/
+https://www.ptsduk.org/treatment-help/cognitive-behavioural-therapy-cbt/
 
 # Misc
 
