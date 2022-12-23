@@ -99,3 +99,42 @@ boxplot(animated_group$cpss_diff)
 boxplot(animated_group$or_diff)
 
 
+control_male <- filter(control_group, gender == "Male")
+control_female <- filter(control_group, gender == "Female")
+
+static_male <- filter(static_group, gender == "Male")
+static_female <- filter(static_group, gender == "Female")
+
+animated_male <- filter(animated_group, gender == "Male")
+animated_female <- filter(animated_group, gender == "Female")
+
+
+boxplot(control_male$cpss_diff)
+boxplot(control_female$cpss_diff)
+boxplot(control_male$or_diff)
+boxplot(control_female$or_diff)
+
+boxplot(static_male$cpss_diff)
+boxplot(static_female$cpss_diff)
+boxplot(static_male$or_diff)
+boxplot(static_female$or_diff)
+
+boxplot(animated_male$cpss_diff)
+boxplot(animated_female$cpss_diff)
+boxplot(animated_male$or_diff)
+boxplot(animated_female$or_diff)
+
+
+## Scatterplot
+
+plot(x = control_group$cpss_diff, y = control_group$or_diff)
+plot(x = control_male$cpss_diff, y = control_male$or_diff)
+plot(x = control_female$cpss_diff, y = control_female$or_diff)
+
+plot(x = static_group$cpss_diff, y = static_group$or_diff)
+plot(x = static_male$cpss_diff, y = static_male$or_diff)
+plot(x = static_female$cpss_diff, y = static_female$or_diff)
+
+plot(x = animated_group$cpss_diff, y = animated_group$or_diff)
+plot(x = animated_male$cpss_diff, y = animated_male$or_diff)
+plot(x = animated_female$cpss_diff, y = animated_female$or_diff)
