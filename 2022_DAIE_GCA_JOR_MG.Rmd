@@ -51,7 +51,8 @@ summary of the contents
 
 ## Topic and Context
 MG:
-Post‐traumatic stress disorder (PTSD) is arguably the most common psychiatric disorder to arise after exposure to a traumatic event. Trauma‐focused cognitive behaviour therapy is the best‐validated treatment for PTSD, it has stagnated over recent decades, and only two‐thirds of PTSD patients respond adequately to this intervention. Moreover, most people with PTSD do not access evidence‐based treatment, and this situation is much worse in low‐ and middle‐income countries. Identifying processes that can overcome these major barriers to better management of people with PTSD remains an outstanding challenge.
+Post‐traumatic stress disorder (PTSD) is seen as one of the most common psychiatric disorder to follow after exposure to a traumatic event. It has been record (by ptsd.va.gov) that approx. 6% of the population will have PTSD at some point in time.
+It has been known that trauma-focused cognitive behavior therapy is the best-validated threat for PTSD. Although, not all PTSD patients respond adequately to this type of treatment. There has also been studies that most people with PTSD do not access evidence-based treatment, and this situation is much worse for lower and middle income countries. This identify that there is still a lot to overcome in the style of treatment to better improve peoples lives with PTSD and remains a challenge.
 
 JOG:
 Observer-Rated and Self-Report methods of measuring patient PTSD/anxiety levels were used to assess patient PTSD levels across three groups of fifty patients. Each group has an equal numbers of Male and Female participant, twenty-five each. 
@@ -85,8 +86,7 @@ There was a 12 week interval between the pre and post trial measurements, or the
 
 ## Rationale
 MG:
-CBT addresses the here and now of PTSD symptoms, it doesn’t necessarily go back over the initial cause of the PTSD. That is something other types of therapies can explore with you. CBT helps you to adjust and re-align negative thoughts, feelings and behaviours that stop you from enjoying a good quality of life.
-We aim to explore the effectiveness of virtual reality-assisted cognitive behavioural therapy (VRCBT) in the treatment of patients with PTSD. We further compare the therapeutic effect of VRCBT with that of standard cognitive behavioural therapy (CBT).
+While CBT is effective in the management of symptoms of PTSD, it doesn't specifically deal with the underlying cause. Furthermore, not all patients respond to CBT. Therefore, in an effort to improve the outcomes for patients with PTSD we aim to explore the effectiveness of virtual reality assisted cognitive behavioural therapy compared to standard CBT practices.
 
 JOR:
 Kind of simple. We only have a small amount of information, the change in PTSD Levels after 12 weeks, with one possible variable gender that may influence the outcome. Using 3 different treatment methods, with 2 different ratings. 
@@ -95,10 +95,8 @@ So, we would expect there is either some change, or no change after 12 weeks. Ea
 
 ## Hypothesis
 MG:
-Null hypothesis: there is no difference in terms of CPSS scores betweeen the animated group and control group, or the static group and the control group
-
-Alternative hypothesis: there is a significant difference in terms of CPSS scores between the animated group and control group, or the static group and the control group
-
+Null hypothesis (H0): there is no difference in terms of CPSS scores betweeen the animated group and control group, or the static group and the control group
+Alternative hypothesis (H1): there is a significant difference in terms of CPSS scores between the animated group and control group, or the static group and the control group
 
 JOR:
 Average PTSD levels for both observer rated and self-reported should improve over a 12 week period.
@@ -114,12 +112,12 @@ The participants involved in the study were all young adults with PTSD in the ag
 
 ## Design
 The patients were allocated into one of three groups; 
-- Control, static (traditional CBT, no VR)
-- Static (non-animated model content, VR) 
-- Animated (animated model content, VR)
+  - Control, static (traditional CBT, no VR)
+  - Static (non-animated model content, VR) 
+  - Animated (animated model content, VR)
 
 Non-animated means the objects in the virtual environment would be still and not interact.
-Animated means when you add objects onto the Jungian Sandplay they would interact and move around the environment
+Animated means when you add objects onto the Jungian Sand play they would interact and move around the environment
 
 ## Materials
 The 3 groups underwent 12 weeks of treatment for 50 minutes per week with a therapist. During that time the patients either underwent traditional CBT; or used one of the two (quality) versions of the VR app.
