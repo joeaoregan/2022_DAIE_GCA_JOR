@@ -51,8 +51,7 @@ summary of the contents
 
 ## Topic and Context
 MG:
-Post‐traumatic stress disorder (PTSD) is seen as one of the most common psychiatric disorder to follow after exposure to a traumatic event. It has been record (by ptsd.va.gov) that approx. 6% of the population will have PTSD at some point in time.
-It has been known that trauma-focused cognitive behavior therapy is the best-validated threat for PTSD. Although, not all PTSD patients respond adequately to this type of treatment. There has also been studies that most people with PTSD do not access evidence-based treatment, and this situation is much worse for lower and middle income countries. This identify that there is still a lot to overcome in the style of treatment to better improve peoples lives with PTSD and remains a challenge.
+Post‐traumatic stress disorder (PTSD) is seen as one of the most common psychiatric disorder to follow after exposure to a traumatic event. It has been record (by ptsd.va.gov) that approx. 6% of the population will have PTSD at some point in time. It has been known that trauma-focused cognitive behavior therapy is the best-validated threat for PTSD. Although, not all PTSD patients respond adequately to this type of treatment. There has also been studies that most people with PTSD do not access evidence-based treatment, and this situation is much worse for lower and middle income countries. This identify that there is still a lot to overcome in the style of treatment to better improve peoples lives with PTSD and remains a challenge.
 
 JOG:
 Observer-Rated and Self-Report methods of measuring patient PTSD/anxiety levels were used to assess patient PTSD levels across three groups of fifty patients. Each group has an equal numbers of Male and Female participant, twenty-five each. 
