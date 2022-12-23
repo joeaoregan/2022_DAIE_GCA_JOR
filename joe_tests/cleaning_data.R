@@ -11,8 +11,10 @@ cat("\014") # Clear data
 
 ### READ DATA
 
-raw_data <-read_csv("daie_ca3_data_5.csv") # read raw data from csv
-# View(raw_data) # original, unchanged CSV file
+# https://cran.r-project.org/web/packages/TreeTools/vignettes/filesystem-navigation.html
+# ../ for parent directory
+raw_data <- read_csv("../daie_ca3_data_5.csv") # read raw data from csv
+View(raw_data) # original, unchanged CSV file
 
 
 ### CLEAN DATA
