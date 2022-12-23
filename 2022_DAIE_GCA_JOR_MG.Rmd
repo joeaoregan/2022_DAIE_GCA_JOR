@@ -3,33 +3,29 @@ title: "1. DAIE Pair Project"
 author: "Joe O'Regan and Michael Galbraith"
 date: "2022-12-12"
 output:
-  html_document:
-    toc: yes
-    toc_depth: '2'
-    df_print: paged
   html_notebook:
     theme: darkly
     toc: yes
     toc_depth: 2
+  html_document:
+    toc: yes
+    toc_depth: '2'
+    df_print: paged
+    
+---
+
+---
+
+**Repo:** 
+
+<https://github.com/joeaoregan/2022_DAIE_GCA_JOR_MG>
+
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
-```{r Load & View, echo=TRUE}
-
-library(readr)
-data5 <-read_csv("daie_ca3_data_5.csv")
-View(data5)
-#head(data5, 10)
-```
-
-**Repo:** <https://github.com/joeaoregan/2022_DAIE_GCA_JOR_MG>
-
-# Title
-# Table of Contents
 # Abstract
 
 summary of the contents
@@ -46,15 +42,17 @@ summary of the contents
 
 ## Findings / Implications
 
+---
 
 # Introduction
 
 ## Topic and Context
+
 MG:
 Post‐traumatic stress disorder (PTSD) is seen as one of the most common psychiatric disorder to follow after exposure to a traumatic event. It has been recorded (by ptsd.va.gov) that approx. 6% of the population will have PTSD at some point in time. It has been known that trauma-focused cognitive behaviour therapy is the best-validated threat for PTSD. 
 Although not all PTSD patients respond adequately to this type of treatment. There has also been studies that most people with PTSD do not access evidence-based treatment, and this situation is much worse for lower and middle income countries. This identify that there is still a lot to overcome in the style of treatment to better improve people’s lives with PTSD and remains a challenge.
 
-JOG:
+JOE:
 Observer-Rated and Self-Report methods of measuring patient PTSD/anxiety levels were used to assess patient PTSD levels across three groups of fifty patients. Each group has an equal numbers of Male and Female participant, twenty-five each. 
 
 The age range for this hypothetical situation doesn't matter as it hasn't been recorded, but I suppose if this was a real world situation there might be some ethical issues, but it's not sure it's all made up as far as I know. 
@@ -85,6 +83,7 @@ There was a 12 week interval between the pre and post trial measurements, or the
 
 
 ## Rationale
+
 MG:
 While CBT is effective in the management of symptoms of PTSD, it doesn't specifically deal with the underlying cause. Furthermore, not all patients respond to CBT. Therefore, in an effort to improve the outcomes for patients with PTSD we aim to explore the effectiveness of virtual reality assisted cognitive behavioral therapy compared to standard CBT practices.
 
@@ -94,6 +93,7 @@ Kind of simple. We only have a small amount of information, the change in PTSD L
 So, we would expect there is either some change, or no change after 12 weeks. Each of the methods may have different outcomes, and the gender of the patients may be a factor in how they respond to each treatment, or to treatment in general by any of the 3 treatments.
 
 ## Hypothesis
+
 MG:
 Null hypothesis (H0): there is no difference in terms of CPSS scores betweeen the animated group and control group, or the static group and the control group
 
@@ -106,28 +106,43 @@ H0 (Null hypothesis):
 
 H1 (Alternative): 
 
+---
+
 # Method
 
+```{r Load & View, echo=TRUE}
+if(!require("readr")) install.packages("readr")
+library(readr)
+
+raw_data <-read_csv("daie_ca3_data_5.csv")
+# View(data5)
+#head(data5, 10)
+rmarkdown::paged_table(raw_data)
+```
+
 ## Participants
+
 The participants involved in the study were all young adults with PTSD in the age range of 18 - 25 years. There were 150 students, equally divided into 75 males and 75 females.
 
 ## Design
+
 The patients were allocated into one of three groups; 
   
   - Control, static (traditional CBT, no VR)
-  
   - Static (non-animated model content, VR) 
-  
   - Animated (animated model content, VR)
 
 Non-animated means the objects in the virtual environment would be still and not interact.
 Animated means when you add objects onto the Jungian Sand play they would interact and move around the environment
 
 ## Materials
+
 The 3 groups underwent 12 weeks of treatment for 50 minutes per week with a therapist. During that time the patients either underwent traditional CBT; or used one of the two (quality) versions of the VR app.
 
 ## Procedure
+
 During the study, PTSD was assessed using observer-rated (i.e., therapist-rated) and self-report (i.e., Child PTSD Symptom Scale Self-Report Version (CPSS-SR)) measurements, respectively. Both measurements are scaled to the range of 0 to 10. Measurements were taken at the start and end of the study.
+
 
 # Results
 
@@ -255,6 +270,8 @@ Scatter Plots
 ## Statistical Tests
 ## Magnitude and Direction of Results
 
+---
+
 # Discussion
 
 ## Outline Findings and Relation to the Hypothesis
@@ -264,6 +281,8 @@ change in anxiety over time +
 compare 3 groups
 
 ## Limitations (If confounding variables are clearly identified by your group)
+
+---
 
 # References
 
@@ -304,48 +323,3 @@ Cognitive behavioural therapy (CBT) – PTSD UK. 2022. Cognitive behavioural the
 **Statistical Analysis**
 
 WallStreetMojo. 2022. Statistical Analysis. [ONLINE] Available at: https://www.wallstreetmojo.com/statistical-analysis/. [Accessed 23 December 2022].
-
-
-# Misc
-
-## column names
-
-* gender
-* test_group
-* pre_trial_cpss
-* post_trial_cpss
-* pre_trial_or
-* post_trial_or
-
-
-```{r}
-unique_values_in_gender <- unique(data5$gender)
-unique_values_in_gender
-```
-
-"Feale" needs to be changed to "Female"
-
-```{r}
-unique_values_in_test_group <- unique(data5$test_group)
-unique_values_in_test_group
-
-```
-
-"Anmated" needs to be changed to "Animated"
-
-## cleaning
-
-
-
-## Random Plots
-
-Testing plots
-
-```{r data5, echo=FALSE}
-plot(data5$pre_trial_cpss)
-#plot(data5$post_trial_cpss) # clean data
-plot(data5$pre_trial_or)
-plot(data5$post_trial_or)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
