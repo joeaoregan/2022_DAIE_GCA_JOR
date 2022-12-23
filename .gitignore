@@ -3,5 +3,6 @@
 *.html
 .Rproj.user
 test*.R
+test*.Rmd
 .Rhistory
 .RData

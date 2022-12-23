@@ -1,5 +1,6 @@
 ---
-title: "1. DAIE Pair Project"
+title: "DAIE Pair Project"
+subtitle: Descriptive & Inferential Analysis of a Jungian Sandplay VR Project
 author: "Joe O'Regan and Michael Galbraith"
 date: "2022-12-12"
 output:
@@ -7,11 +8,15 @@ output:
     theme: darkly
     toc: yes
     toc_depth: 2
+    toc_float: true
+    number_sections: true
+    code_folding: hide
   html_document:
     toc: yes
     toc_depth: '2'
     df_print: paged
-    
+    theme: darkly
+    code_folding: hide
 ---
 
 ---
@@ -22,13 +27,28 @@ output:
 
 ---
 
+**Raw Data:**
+
+Load CSV File
+```{r Load Raw Data, echo=TRUE}
+csv_file_name = "daie_ca3_data_5.csv"
+raw_data <- read.csv(csv_file_name)
+```
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+Paged table of Raw Data
+```{r Inspect Head, Tail & Structure, echo=TRUE}
+# show a "prettier" paged table
+rmarkdown::paged_table(raw_data)
+```
+
+
 # Abstract
 
-summary of the contents
+<REPLACE> summary of the contents
 
 ## Aim and Rationale
 
@@ -48,11 +68,11 @@ summary of the contents
 
 ## Topic and Context
 
-MG:
+<MG>
 Post‐traumatic stress disorder (PTSD) is seen as one of the most common psychiatric disorder to follow after exposure to a traumatic event. It has been recorded (by ptsd.va.gov) that approx. 6% of the population will have PTSD at some point in time. It has been known that trauma-focused cognitive behaviour therapy is the best-validated threat for PTSD. 
 Although not all PTSD patients respond adequately to this type of treatment. There has also been studies that most people with PTSD do not access evidence-based treatment, and this situation is much worse for lower and middle income countries. This identify that there is still a lot to overcome in the style of treatment to better improve people’s lives with PTSD and remains a challenge.
 
-JOE:
+<JOE>
 Observer-Rated and Self-Report methods of measuring patient PTSD/anxiety levels were used to assess patient PTSD levels across three groups of fifty patients. Each group has an equal numbers of Male and Female participant, twenty-five each. 
 
 The age range for this hypothetical situation doesn't matter as it hasn't been recorded, but I suppose if this was a real world situation there might be some ethical issues, but it's not sure it's all made up as far as I know. 
@@ -84,41 +104,31 @@ There was a 12 week interval between the pre and post trial measurements, or the
 
 ## Rationale
 
-MG:
+<MG>
 While CBT is effective in the management of symptoms of PTSD, it doesn't specifically deal with the underlying cause. Furthermore, not all patients respond to CBT. Therefore, in an effort to improve the outcomes for patients with PTSD we aim to explore the effectiveness of virtual reality assisted cognitive behavioral therapy compared to standard CBT practices.
 
-JOR:
+<JOR>
 Kind of simple. We only have a small amount of information, the change in PTSD Levels after 12 weeks, with one possible variable gender that may influence the outcome. Using 3 different treatment methods, with 2 different ratings. 
 
 So, we would expect there is either some change, or no change after 12 weeks. Each of the methods may have different outcomes, and the gender of the patients may be a factor in how they respond to each treatment, or to treatment in general by any of the 3 treatments.
 
 ## Hypothesis
 
-MG:
-Null hypothesis (H0): there is no difference in terms of CPSS scores betweeen the animated group and control group, or the static group and the control group
+<MG>
+Null hypothesis (H0): there is no difference in terms of CPSS scores between the animated group and control group, or the static group and the control group
 
 Alternative hypothesis (H1): there is a significant difference in terms of CPSS scores between the animated group and control group, or the static group and the control group
 
-JOR:
+<JOR>
 Average PTSD levels for both observer rated and self-reported should improve over a 12 week period.
 
-H0 (Null hypothesis): 
+H0 (Null hypothesis): The average PTSD levels for both Observer-Rated and Self Reported methods should improve over a 12 week period.
 
-H1 (Alternative): 
+H1 (Alternative): The average PTSD levels stay the same or get worse.
 
 ---
 
 # Method
-
-```{r Load & View, echo=TRUE}
-if(!require("readr")) install.packages("readr")
-library(readr)
-
-raw_data <-read_csv("daie_ca3_data_5.csv")
-# View(data5)
-#head(data5, 10)
-rmarkdown::paged_table(raw_data)
-```
 
 ## Participants
 
@@ -175,33 +185,33 @@ Measures of central tendency
 
 
 ```{r}
-pre_trial_cpss_mean <- mean(data5$pre_trial_cpss)
+pre_trial_cpss_mean <- mean(raw_data$pre_trial_cpss)
 pre_trial_cpss_mean
 
-pre_trial_cpss_std <- sd(data5$pre_trial_cpss)
+pre_trial_cpss_std <- sd(raw_data$pre_trial_cpss)
 pre_trial_cpss_std
 pre_trial_cpss <- rnorm(150, pre_trial_cpss_mean, pre_trial_cpss_std)
 hist(pre_trial_cpss)
 
 # clean data? 1 value missing for this variable
 
-post_trial_cpss_mean <- mean(data5$post_trial_cpss)
+post_trial_cpss_mean <- mean(raw_data$post_trial_cpss)
 post_trial_cpss_mean
-#post_trial_cpss_std <- sd(data5$post_trial_cpss)
+#post_trial_cpss_std <- sd(raw_data$post_trial_cpss)
 #post_trial_cpss_std
 #post_trial_cpss <- rnorm(150, post_trial_cpss_mean, post_trial_cpss_std)
 #hist(post_trial_cpss)
 
-pre_trial_or_mean <- mean(data5$pre_trial_or)
+pre_trial_or_mean <- mean(raw_data$pre_trial_or)
 pre_trial_or_mean
-pre_trial_or_sd <- sd(data5$pre_trial_or)
+pre_trial_or_sd <- sd(raw_data$pre_trial_or)
 pre_trial_or_sd
 pre_trial_or <- rnorm(150, pre_trial_or_mean, pre_trial_or_sd)
 hist(pre_trial_or)
 
-post_trial_or_mean <- mean(data5$post_trial_or)
+post_trial_or_mean <- mean(raw_data$post_trial_or)
 post_trial_or_mean
-post_trial_or_sd <- sd(data5$post_trial_or)
+post_trial_or_sd <- sd(raw_data$post_trial_or)
 post_trial_or_sd
 post_trial_or <- rnorm(150, post_trial_or_mean, post_trial_or_sd)
 hist(post_trial_or)
@@ -212,33 +222,33 @@ hist(post_trial_or)
 * median
 
 ```{r}
-pre_trial_cpss_mode <- mean(data5$pre_trial_cpss)
+pre_trial_cpss_mode <- mean(raw_data$pre_trial_cpss)
 pre_trial_cpss_mean
-pre_trial_cpss_std <- sd(data5$pre_trial_cpss)
+pre_trial_cpss_std <- sd(raw_data$pre_trial_cpss)
 pre_trial_cpss_std
 pre_trial_cpss <- rnorm(150, pre_trial_cpss_mean, pre_trial_cpss_std)
 hist(pre_trial_cpss)
 
 # clean data? 1 value missing for this variable
-#post_trial_cpss_mean <- mean(data5$post_trial_cpss)
+#post_trial_cpss_mean <- mean(raw_data$post_trial_cpss)
 # na.rm - removes null values
-post_trial_cpss_mean <- mean(data5$post_trial_cpss, na.rm = TRUE)
+post_trial_cpss_mean <- mean(raw_data$post_trial_cpss, na.rm = TRUE)
 #post_trial_cpss_mean
-#post_trial_cpss_std <- sd(data5$post_trial_cpss)
+#post_trial_cpss_std <- sd(raw_data$post_trial_cpss)
 #post_trial_cpss_std
 #post_trial_cpss <- rnorm(150, post_trial_cpss_mean, post_trial_cpss_std)
 #hist(post_trial_cpss)
 
-pre_trial_or_mean <- mean(data5$pre_trial_or)
+pre_trial_or_mean <- mean(raw_data$pre_trial_or)
 pre_trial_or_mean
-pre_trial_or_sd <- sd(data5$pre_trial_or)
+pre_trial_or_sd <- sd(raw_data$pre_trial_or)
 pre_trial_or_sd
 pre_trial_or <- rnorm(150, pre_trial_or_mean, pre_trial_or_sd)
 hist(pre_trial_or)
 
-post_trial_or_mean <- mean(data5$post_trial_or)
+post_trial_or_mean <- mean(raw_data$post_trial_or)
 post_trial_or_mean
-post_trial_or_sd <- sd(data5$post_trial_or)
+post_trial_or_sd <- sd(raw_data$post_trial_or)
 post_trial_or_sd
 post_trial_or <- rnorm(150, post_trial_or_mean, post_trial_or_sd)
 hist(post_trial_or)
