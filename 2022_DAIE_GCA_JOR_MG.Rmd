@@ -292,8 +292,15 @@ R Programming 101 (YouTube). 2022. Doing a t-test using R programming (in 4 minu
 Markdown Basics. 2022. Markdown Basics. [ONLINE] Available at: https://rmarkdown.rstudio.com/authoring_basics.html. [Accessed 23 December 2022].
 
 **PTSD and CBT research**
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6732680/
-https://www.ptsduk.org/treatment-help/cognitive-behavioural-therapy-cbt/
+
+National Library of Medicine. 2022. Post‐traumatic stress disorder: a state‐of‐the‐art review of evidence and challenges. [ONLINE] Available at: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6732680/. [Accessed 23 December 2022].
+
+Cognitive behavioural therapy (CBT) – PTSD UK. 2022. Cognitive behavioural therapy (CBT) – PTSD UK. [ONLINE] Available at: https://www.ptsduk.org/treatment-help/cognitive-behavioural-therapy-cbt/. [Accessed 23 December 2022].
+
+**Statistical Analysis**
+
+WallStreetMojo. 2022. Statistical Analysis. [ONLINE] Available at: https://www.wallstreetmojo.com/statistical-analysis/. [Accessed 23 December 2022].
+
 
 # Misc
 
