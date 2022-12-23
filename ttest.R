@@ -111,6 +111,9 @@ qqnorm(data$cpss_diff,
 qqnorm(data$or_diff,
        pch = 2, frame = FALSE)
 
+
+# if data is on qqline it is normally distributed
+
 qqline(data$cpss_diff)
 qqline(data$or_diff)
 
