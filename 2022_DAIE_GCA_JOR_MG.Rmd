@@ -96,6 +96,7 @@ So, we would expect there is either some change, or no change after 12 weeks. Ea
 ## Hypothesis
 MG:
 Null hypothesis: there is no difference in terms of CPSS scores betweeen the animated group and control group, or the static group and the control group
+
 Alternative hypothesis: there is a significant difference in terms of CPSS scores between the animated group and control group, or the static group and the control group
 
 
