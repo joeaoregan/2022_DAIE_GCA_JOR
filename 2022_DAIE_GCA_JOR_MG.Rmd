@@ -216,6 +216,10 @@ Yihui Xie, J. J. Allaire, Garrett Grolemund. 2022. 3.1 HTML document | R Markdow
 R Programming 101 (YouTube). 2022. Clean your data with R. R programming for beginners. - YouTube. [ONLINE] Available at: https://youtu.be/sV5lwAJ7vnQ. [Accessed 22 December 2022].
 
 
+**T Test**
+
+R Programming 101 (YouTube). 2022. Doing a t-test using R programming (in 4 minutes) - YouTube. [ONLINE] Available at: https://www.youtube.com/watch?v=x1RFWHV2VUU. [Accessed 23 December 2022].
+
 # Misc
 
 ## column names

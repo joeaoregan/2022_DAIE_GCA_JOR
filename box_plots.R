@@ -125,7 +125,9 @@ boxplot(animated_male$or_diff)
 boxplot(animated_female$or_diff)
 
 
-## Scatterplot
+## Scatterplot - male close, female not matching - the ratings for or and cpss
+
+plot(x = data$cpss_diff, y = data$or_diff)
 
 plot(x = control_group$cpss_diff, y = control_group$or_diff)
 plot(x = control_male$cpss_diff, y = control_male$or_diff)
