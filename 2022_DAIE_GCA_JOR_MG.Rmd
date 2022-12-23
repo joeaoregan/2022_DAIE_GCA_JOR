@@ -21,13 +21,15 @@ output:
 
 ---
 
-**Repo:** 
+<TODO-CAN-HAVE-THREE-HASH-SYMBOLS-FOR-HEADINGS-WITHOUT-MESSING-UP-TABLE-OF-CONTENTS>
+
+### Repo
 
 <https://github.com/joeaoregan/2022_DAIE_GCA_JOR_MG>
 
 ---
 
-**Raw Data:**
+### Raw Data
 
 Load Raw Data CSV File
 ```{r Load Raw Data, echo=TRUE}
@@ -95,37 +97,56 @@ typos <- raw_data %>%
 typos
 ```
 
+### Clean Data
 
-* **Clean Data**
-  + fix types: row 125 "Anmated" becomes "Animated, row 148 "Feale" becomes "Female
-  + remove row 73 with missing data, as this could skew the results
+  + **Remove rows with missing data:** filter()
+    * **Row 73:** removed, as missing value could skew the results, as we don't know what value should be. Therefore we can't replace it.
+  + **Fix typos:** mutate()
+    * **Row 125:** "Anmated" becomes "Animated".
+    * **Row 148:** "Feale" becomes "Female".
+  + **Check for duplicates:** distinct()
+    * No duplicates found
+    
+  <TODO-CHECK-VALUES-ARE-IN-RANGE-0-TO-10>
 
 ```{r}
 data <- raw_data %>% 
   select(X, gender, test_group, pre_trial_cpss, post_trial_cpss, pre_trial_or, post_trial_or) %>%
   distinct() %>% # remove duplicates (none anyway)
   filter(complete.cases(.)) %>% # remove rows with incomplete data
-  mutate(gender = recode(gender, "Feale" = "Female")) %>% # change type
-  mutate(test_group = recode(test_group, "Anmated" = "Animated")) 
+  mutate(gender = recode(gender, "Feale" = "Female")) %>% # change typo in gender column
+  mutate(test_group = recode(test_group, "Anmated" = "Animated")) # change typo in test_group column
 data
 ```
 
 
 # Abstract
 
-<REPLACE> summary of the contents
+<TODO-REPLACE> summary of the contents
 
 ## Aim and Rationale
 
+<TODO-HAVE-NO-CLUE-WHAT-GOES-HERE>
+
 ## Participants and Setting
+
+<TODO-SHITE-ABOUT-THE-PATIENTS>
 
 ## Experiment Design
 
+<TODO-STILL-LOOKING-AT-THIS>
+
 ## Results Gathering
+
+<TODO-NEEDS-PREVIOUS-STEP>
 
 ## Major Findings
 
+<TODO-NEEDS-PREVIOUS-STEP>
+
 ## Findings / Implications
+
+<TODO-NEEDS-PREVIOUS-STEP>
 
 ---
 
@@ -133,7 +154,7 @@ data
 
 ## Topic and Context
 
-<MG>
+<MG-EDIT-ANY-WAY-YOU-LIKE>
 Post‐traumatic stress disorder (PTSD) is seen as one of the most common psychiatric disorder to follow after exposure to a traumatic event. It has been recorded (by ptsd.va.gov) that approx. 6% of the population will have PTSD at some point in time. It has been known that trauma-focused cognitive behaviour therapy is the best-validated threat for PTSD. 
 Although not all PTSD patients respond adequately to this type of treatment. There has also been studies that most people with PTSD do not access evidence-based treatment, and this situation is much worse for lower and middle income countries. This identify that there is still a lot to overcome in the style of treatment to better improve people’s lives with PTSD and remains a challenge.
 
@@ -222,6 +243,8 @@ During the study, PTSD was assessed using observer-rated (i.e., therapist-rated)
 # Results
 
 ## Descriptive Statistics
+
+<TODO-THIS-NEEDS-TO-BE-DONE-IT-SHOULD-BE-EASY>
 
 plots/charts
 e.g. boxplot
