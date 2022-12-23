@@ -4,18 +4,18 @@ subtitle: Descriptive & Inferential Analysis of a Jungian Sandplay VR Project
 author: "Joe O'Regan and Michael Galbraith"
 date: "2022-12-12"
 output:
+  html_document:
+    toc: yes
+    toc_depth: '2'
+    df_print: paged
+    theme: darkly
+    code_folding: hide
   html_notebook:
     theme: darkly
     toc: yes
     toc_depth: 2
     toc_float: true
     number_sections: true
-    code_folding: hide
-  html_document:
-    toc: yes
-    toc_depth: '2'
-    df_print: paged
-    theme: darkly
     code_folding: hide
 ---
 
@@ -29,21 +29,73 @@ output:
 
 **Raw Data:**
 
-Load CSV File
+Load Raw Data CSV File
 ```{r Load Raw Data, echo=TRUE}
 csv_file_name = "daie_ca3_data_5.csv"
 raw_data <- read.csv(csv_file_name)
+
+# names(raw_data) # find name for column1, it's called ...1 elsewhere
 ```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Paged table of Raw Data
+
+* **Paged table of Raw Data:**
 ```{r Inspect Head, Tail & Structure, echo=TRUE}
 # show a "prettier" paged table
 rmarkdown::paged_table(raw_data)
 ```
+
+```{r Load Packages (hidden), include=FALSE}
+if(!require("dplyr")) install.packages("dplyr")
+library(dplyr)
+```
+
+
+* **Rows with missing data:**
+```{r Show Rows With Missing Data}
+missing_data <- raw_data %>%
+  select(X, gender, test_group, pre_trial_cpss, post_trial_cpss, pre_trial_or, post_trial_or) %>%
+  filter(!complete.cases(.))
+
+rmarkdown::paged_table(missing_data)
+```
+
+* **Values in "gender" should be "Female" and "Male"**
+
+```{r Find Spelling Mistakes}
+gender_values = unique(raw_data$gender)
+gender_values
+```
+
+* **Values in test_group should be "Control", "Static", "Animated"**
+
+```{r Find Spelling Mistakes test_group}
+test_group_values = unique(raw_data$test_group)
+test_group_values
+```
+
+* **Show Rows with Typos**
+
+```{r Show Rows with Spelling Mistakes}
+typos <- raw_data %>%
+  select(X, gender, test_group, pre_trial_cpss, post_trial_cpss, pre_trial_or, post_trial_or) %>%
+  filter(gender == "Feale" | test_group == "Anmated")
+typos
+```
+
+* **Show Rows with Typos or Missing Data**
+
+```{r Show Rows with Spelling Mistakes or Missing Data}
+typos <- raw_data %>%
+  select(X, gender, test_group, pre_trial_cpss, post_trial_cpss, pre_trial_or, post_trial_or) %>%
+  filter(gender == "Feale" | test_group == "Anmated" | !complete.cases(.))
+typos
+```
+
+
 
 
 # Abstract
