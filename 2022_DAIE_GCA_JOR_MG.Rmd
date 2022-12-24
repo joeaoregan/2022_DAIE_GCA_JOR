@@ -31,7 +31,10 @@ output:
 
 ### Raw Data
 
-Load Raw Data CSV File
+#### Load Raw Data from CSV File
+
+The raw data is loaded from an external CSV file.
+
 ```{r Load Raw Data, echo=TRUE}
 csv_file_name = "daie_ca3_data_5.csv"
 raw_data <- read.csv(csv_file_name)
@@ -43,8 +46,28 @@ raw_data <- read.csv(csv_file_name)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+---
 
-* **Paged table of Raw Data:**
+#### Explore Raw Data
+
+Get column names
+
+```{r Get the name of each column}
+names(raw_data)
+```
+
+Get column data type
+
+```{r Get data type of each column}
+sapply(raw_data, typeof)
+```
+
+---
+
+#### Raw Data Table
+
+Display the raw data in a paged table.
+
 ```{r Inspect Head, Tail & Structure, echo=TRUE}
 # show a "prettier" paged table
 rmarkdown::paged_table(raw_data)
@@ -55,8 +78,36 @@ if(!require("dplyr")) install.packages("dplyr")
 library(dplyr)
 ```
 
+---
 
-* **Rows with missing data:**
+#### Rows with values out of Range (0 to 10)
+
+Check for any values less than 0 or greater than 10. Self-Report and Observer-Rated measurements are scaled to the range 0 to 10.
+
+```{r Check numeric values are in the range 0 to 10}
+# identify_rows <- raw_data$pre_trial_cpss < 0 | raw_data$pre_trial_cpss > 10 | raw_data$post_trial_cpss < 0 | raw_data$post_trial_cpss > 10 | raw_data$pre_trial_or < 0 | raw_data$pre_trial_or > 10 | raw_data$post_trial_or < 0 | raw_data$post_trial_or > 10
+
+# function to do same thing as above for 1 column at a time
+check_range <- function(value) {
+  return(value < 0 | value > 10) # return true if the value is less than 0 or greater than 10, otherwise false
+}
+
+identify_rows <- check_range(raw_data$pre_trial_cpss) | check_range(raw_data$post_trial_cpss) | check_range(raw_data$pre_trial_or) | check_range(raw_data$post_trial_or)
+
+data_not_in_range <- raw_data %>% 
+  select(X, gender, test_group, pre_trial_cpss, post_trial_cpss, pre_trial_or, post_trial_or) %>%
+  subset(., identify_rows)
+
+rmarkdown::paged_table(data_not_in_range)
+```
+
+
+---
+
+#### Rows with missing data
+
+Show rows with missing data. We will remove this later.
+
 ```{r Show Rows With Missing Data}
 missing_data <- raw_data %>%
   select(X, gender, test_group, pre_trial_cpss, post_trial_cpss, pre_trial_or, post_trial_or) %>%
@@ -65,21 +116,33 @@ missing_data <- raw_data %>%
 rmarkdown::paged_table(missing_data)
 ```
 
-* **Values in "gender" should be "Female" and "Male"**
+---
+
+#### Values in "gender" should be "Female" and "Male"
+
+Use unique() to find all the different values in the gender column to find/rule out errors
 
 ```{r Find Spelling Mistakes}
 gender_values = unique(raw_data$gender)
 gender_values
 ```
 
-* **Values in test_group should be "Control", "Static", "Animated"**
+---
+
+#### Values in test_group should be "Control", "Static", "Animated"
+
+Use unique() to find all the different values in the test_group column to find/rule out errors
 
 ```{r Find Spelling Mistakes test_group}
 test_group_values = unique(raw_data$test_group)
 test_group_values
 ```
 
-* **Show Rows with Typos**
+---
+
+#### Show Rows with Typos
+
+After previously finding the typos "Feale" and "Anmated" with unique(), in gender and test_group columns. Show the rows, so we can be sure they were corrected in the cleaned data later.
 
 ```{r Show Rows with Spelling Mistakes}
 typos <- raw_data %>%
@@ -88,7 +151,9 @@ typos <- raw_data %>%
 typos
 ```
 
-* **Show Rows with Typos or Missing Data**
+#### Show Rows with Typos or Missing Data
+
+Show all errors. Only Typos and Missing Data have been identified.
 
 ```{r Show Rows with Spelling Mistakes or Missing Data}
 typos <- raw_data %>%
@@ -98,6 +163,8 @@ typos
 ```
 
 ### Clean Data
+
+The following has been performed to clean the data:
 
   + **Remove rows with missing data:** filter()
     * **Row 73:** removed, as missing value could skew the results, as we don't know what value should be. Therefore we can't replace it.
@@ -109,7 +176,7 @@ typos
     
   <TODO-CHECK-VALUES-ARE-IN-RANGE-0-TO-10>
 
-```{r}
+```{r Clean data}
 data <- raw_data %>% 
   select(X, gender, test_group, pre_trial_cpss, post_trial_cpss, pre_trial_or, post_trial_or) %>%
   distinct() %>% # remove duplicates (none anyway)
