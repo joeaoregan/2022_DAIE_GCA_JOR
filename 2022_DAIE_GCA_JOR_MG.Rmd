@@ -33,6 +33,7 @@ output:
 
 The purpose of this assignment was to form a hypothesis based on data collected at the beginning and end of a 12 week period of Cognitive Behavioural Therapy (CBT). The data was collected to investigate the effect of Jungian Sandplay therapy in a Virtual Reality environment. Patients were being treated for PTSD. Psychological interventions like this have been shown to have a positive impact.
 
+
 ## Participants and Setting
 
 The study consisted of 150 patients divided equally into 3 groups. 
@@ -44,12 +45,12 @@ All patients were young adults aged 18 to 25 with no age information recorded.
 * Animated (Patients who used the animated version of the VR app)
 
 
+## Experiment Design
 
-
-
-## Experiment Design   XXX To do XXX
-
-<TODO-STILL-LOOKING-AT-THIS>
+Clean the raw data from the CSV file.
+Split the data into the 3 testing groups: control, static, animated.
+Split each group into male and female.
+Use histograms and boxplots to visually inspect outliers.
 
 ## Results Gathering
 
@@ -82,38 +83,8 @@ Performing Hypothesis tests to check the validity of the hypothesis based on the
 
 ## Topic and Context
 
-<MG-EDIT-ANY-WAY-YOU-LIKE>
 Post‐traumatic stress disorder (PTSD) is seen as one of the most common psychiatric disorder to follow after exposure to a traumatic event. It has been recorded (by ptsd.va.gov) that approx. 6% of the population will have PTSD at some point in time. It has been known that trauma-focused cognitive behaviour therapy is the best-validated threat for PTSD. 
 Although not all PTSD patients respond adequately to this type of treatment. There has also been studies that most people with PTSD do not access evidence-based treatment, and this situation is much worse for lower and middle income countries. This identify that there is still a lot to overcome in the style of treatment to better improve people’s lives with PTSD and remains a challenge.
-
-<JOE>
-Observer-Rated and Self-Report methods of measuring patient PTSD/anxiety levels were used to assess patient PTSD levels across three groups of fifty patients. Each group has an equal numbers of Male and Female participant, twenty-five each. 
-
-The age range for this hypothetical situation doesn't matter as it hasn't been recorded, but I suppose if this was a real world situation there might be some ethical issues, but it's not sure it's all made up as far as I know. 
-
-I suppose the real lesson in any college assignment is how much unnecessary information we can filter through, as a student, before you stop caring because life's too short.
-
-There was a 12 week interval between the pre and post trial measurements, or the trial start and end. The types of groups really don't matter, they are just variable names for me. They might as well be x, y and z. What the study is about doesn't matter either, they'll make more readable labels for graphs later. All the waffle about PTSD kind of takes away from the fact this is basically just a numbers and graphs exercise, so I'm not wasting my time rehashing the stuff from the CA spec.
-
-**Groups:**
-
-* Control (No VR)
-* Static (Non-Animated VR)
-* Animated (Animated VR)
-
-**Gender: (Data Limited)**
-
-* Male
-* Female
-
-**Measurements:**
-
-* Self-Report:
-    + Start PTSD Level (pre_trial_cpss)
-    + End PTSD Level (post_trial_cpss)
-* Observer-Rated:
-    + Start PTSD Level (pre_trial_or)
-    + End PTSD Level (post_trial_or)
 
 
 ## Rationale
@@ -128,17 +99,11 @@ So, we would expect there is either some change, or no change after 12 weeks. Ea
 
 ## Hypothesis
 
-<MG>
-Null hypothesis (H0): there is no difference in terms of CPSS scores between the animated group and control group, or the static group and the control group
+For a treatment to be a success, the average PTSD levels for both observer rated and self-reported should improve over a 12 week period, across all groups (control, static, animated), and for all patient types (male, female).
 
-Alternative hypothesis (H1): there is a significant difference in terms of CPSS scores between the animated group and control group, or the static group and the control group
+H0 (Null hypothesis): There is no difference between the median values of male and female patients measurements over a 12 week period.
 
-<JOR>
-Average PTSD levels for both observer rated and self-reported should improve over a 12 week period.
-
-H0 (Null hypothesis): The average PTSD levels for both Observer-Rated and Self Reported methods should improve over a 12 week period.
-
-H1 (Alternative): The average PTSD levels stay the same or get worse.
+H1 (Alternative): There is a difference between the median values of male and female patients measurements over a 12 week period.
 
 ---
 
@@ -303,6 +268,8 @@ typos <- raw_data %>%
 typos
 ```
 
+---
+
 ### Clean Data
 
 The following has been performed to clean the data:
@@ -379,6 +346,8 @@ static_group
 animated_group <- filter(data, test_group == "Animated")
 animated_group
 ```
+
+---
 
 ### Histograms
 
@@ -471,6 +440,9 @@ Outside the boxplot whiskers, outliers are visible for all groups and for both m
 
 #### Control Group
 
+For the control group, outliers are visible for the whole group for both Self-Report and Observer-Rated measurements.
+When data is divided into Male and Female, outliers are visible only for Female Observer-Rated.
+
 ##### Self-Report (CPPS)
 
 ```{r Control CPSS Boxplot}
@@ -485,9 +457,54 @@ boxplot(control_group$or_diff,
         main="Control Observer-Rated (OR) Boxplot")
 ```
 
+##### Control - Male
+
+```{r Control Male}
+control_male <- filter(control_group, gender == "Male")
+control_male
+```
+
+###### Control Male - Self-Report (CPPS)
+
+```{r Male Control CPSS Boxplot}
+boxplot(control_male$cpss_diff, 
+        main="Male - Control Self-Report (CPSS) Boxplot")
+```
+
+###### Control Male - Observer-Rated (OR)
+
+```{r Male Control OR Boxplot}
+boxplot(control_male$or_diff, 
+        main="Male - Control Observer-Rated (OR) Boxplot")
+```
+
+##### Control - Female
+
+```{r Control Female}
+control_female <- filter(control_group, gender == "Female")
+control_female
+```
+
+###### Control Female - Self-Report (CPPS)
+
+```{r Female Control CPSS Boxplot}
+boxplot(control_female$cpss_diff, 
+        main="Female - Control Self-Report (CPSS) Boxplot")
+```
+
+###### Control Female - Observer-Rated (OR)
+
+```{r Female Control OR Boxplot}
+boxplot(control_female$or_diff, 
+        main="Female - Control Observer-Rated (OR) Boxplot")
+```
+
 ---
 
 #### Static Group
+
+For the static group, outliers are visible for the whole group for both Self-Report and Observer-Rated measurements.
+When data is divided into Male and Female, outliers are visible only for male measurements, and in both Self-Report and Observer-Rated measurements.
 
 ##### Self-Report (CPPS)
 
@@ -505,7 +522,60 @@ boxplot(static_group$or_diff,
 
 ---
 
+##### Static Group Male
+
+Outliers are visible for both male measurement methods.
+
+```{r Static Male}
+static_male <- filter(static_group, gender == "Male")
+static_male
+```
+
+###### Static Male - Self-Report (CPPS)
+
+```{r Male Static CPSS Boxplot}
+boxplot(static_male$cpss_diff, 
+        main="Male - Static Self-Report (CPSS) Boxplot")
+```
+
+###### Static Male - Observer-Rated (OR)
+
+```{r Male Static OR Boxplot}
+boxplot(static_male$or_diff, 
+        main="Male - Static Observer-Rated (OR) Boxplot")
+```
+
+---
+
+##### Static Group Female
+
+No outliers are visible for female measurement methods.
+
+```{r Static Female}
+static_female <- filter(static_group, gender == "Female")
+static_female
+```
+
+###### Static Female - Self-Report (CPPS)
+
+```{r Female Static CPSS Boxplot}
+boxplot(static_female$cpss_diff, 
+        main="Female - Static Self-Report (CPSS) Boxplot")
+```
+
+###### Static Female - Observer-Rated (OR)
+
+```{r Female Static OR Boxplot}
+boxplot(static_female$or_diff, 
+        main="Female - Static Observer-Rated (OR) Boxplot")
+```
+
+---
+
 #### Animated Group
+
+For the animated group, outliers are visible for the whole group for both Self-Report and Observer-Rated measurements.
+When data is divided into Male and Female, outliers are visible for male Observer-Rated measurements only.
 
 ##### Self-Report (CPPS)
 
@@ -521,21 +591,204 @@ boxplot(animated_group$or_diff,
         main="Animated Observer-Rated (OR) Boxplot")
 ```
 
+---
+
+##### Animated Group Male
+
+Outliers are visible for both male measurement methods.
+
+```{r Animated Male}
+animated_male <- filter(animated_group, gender == "Male")
+animated_male
+```
+
+###### Animated Male - Self-Report (CPPS)
+
+```{r Male Animated CPSS Boxplot}
+boxplot(animated_male$cpss_diff, 
+        main="Male - Animated Self-Report (CPSS) Boxplot")
+```
+
+###### Animated Male - Observer-Rated (OR)
+
+```{r Male Animated OR Boxplot}
+boxplot(animated_male$or_diff, 
+        main="Male - Animated Observer-Rated (OR) Boxplot")
+```
+
+---
+
+##### Animated Group Female
+
+No outliers are visible for female measurement methods.
+
+```{r Animated Female}
+animated_female <- filter(animated_group, gender == "Female")
+animated_female
+```
+
+###### Animated Female - Self-Report (CPPS)
+
+```{r Female Animated CPSS Boxplot}
+boxplot(animated_female$cpss_diff, 
+        main="Female - Animated Self-Report (CPSS) Boxplot")
+```
+
+###### Animated Female - Observer-Rated (OR)
+
+```{r Female Animated OR Boxplot}
+boxplot(animated_female$or_diff, 
+        main="Female - Animated Observer-Rated (OR) Boxplot")
+```
+
+---
+
+### Mean
+
+##### Control Mean Values
+
+Mean Self-Report Difference
+
+```{r Control Mean CPSS}
+mean_control_cpss <- mean(control_group$cpss_diff)
+mean_control_cpss
+```
+
+Mean Self-Report Difference - Male
+
+```{r Male Control Mean CPSS}
+mean_control_cpss_male <- mean(control_male$cpss_diff)
+mean_control_cpss_male
+```
+
+Mean Self-Report Difference - Female
+
+```{r Female Control Mean CPSS}
+mean_control_cpss_female <- mean(control_female$cpss_diff)
+mean_control_cpss_female
+```
+
+Mean Observer-Rated Difference
+
+```{r Control Mean OR}
+mean_control_or <- mean(control_male$or_diff)
+mean_control_or
+```
+
+Mean Observer-Rated Difference - Male
+
+```{r Male Control Mean OR}
+mean_control_or_male <- mean(control_female$or_diff)
+mean_control_or_male
+```
+
+Mean Observer-Rated Difference - Female
+
+```{r Female Control Mean OR}
+mean_control_or_female <- mean(control_group$or_diff)
+mean_control_or_female
+```
+
+---
+
+##### Static Mean Values
+
+Mean Self-Report Difference
+
+```{r Static Mean CPSS}
+mean_static_cpss <- mean(static_group$cpss_diff)
+mean_static_cpss
+```
+
+Mean Self-Report Difference - Male
+
+```{r Male Static Mean CPSS}
+mean_static_cpss_male <- mean(static_male$cpss_diff)
+mean_static_cpss_male
+```
+
+Mean Self-Report Difference - Female
+
+```{r Female Static Mean CPSS}
+mean_static_cpss_female <- mean(static_female$cpss_diff)
+mean_static_cpss_female
+```
+
+Mean Observer-Rated Difference
+
+```{r Static Mean OR}
+mean_static_or <- mean(static_male$or_diff)
+mean_static_or
+```
+
+Mean Observer-Rated Difference - Male
+
+```{r Male Static Mean OR}
+mean_static_or_male <- mean(static_female$or_diff)
+mean_static_or_male
+```
+
+Mean Observer-Rated Difference - Female
+
+```{r Female Static Mean OR}
+mean_static_or_female <- mean(static_group$or_diff)
+mean_static_or_female
+```
+
+---
+
+##### Animated Mean Values
+
+Mean Self-Report Difference
+
+```{r Animated Mean CPSS}
+mean_animated_cpss <- mean(animated_group$cpss_diff)
+mean_animated_cpss
+```
+
+Mean Self-Report Difference - Male
+
+```{r Male Animated Mean CPSS}
+mean_animated_cpss_male <- mean(animated_male$cpss_diff)
+mean_animated_cpss_male
+```
+
+Mean Self-Report Difference - Female
+
+```{r Female Animated Mean CPSS}
+mean_animated_cpss_female <- mean(animated_female$cpss_diff)
+mean_animated_cpss_female
+```
+
+Mean Observer-Rated Difference
+
+```{r Animated Mean OR}
+mean_animated_or <- mean(animated_male$or_diff)
+mean_animated_or
+```
+
+Mean Observer-Rated Difference - Male
+
+```{r Male Animated Mean OR}
+mean_animated_or_male <- mean(animated_female$or_diff)
+mean_animated_or_male
+```
+
+Mean Observer-Rated Difference - Female
+
+```{r Female Animated Mean OR}
+mean_animated_or_female <- mean(animated_group$or_diff)
+mean_animated_or_female
+```
+
+---
 
 ## Inferential Statistics
 
-chapter 7?
 
-Taking a sample and inferring something in the population
-Probability of something
-Generalise sample statistic to population
-- mean response in population is x
-- believe with % certainty
-
-Histograms
-Scatter Plots
 
 ## Statistical Tests
+
 ## Magnitude and Direction of Results
 
 ---

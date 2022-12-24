@@ -6,7 +6,7 @@ library(readr)
 
 ## Read Data
 
-raw_data <-read_csv("daie_ca3_data_5.csv") # read raw data from csv
+raw_data <-read_csv("../daie_ca3_data_5.csv") # read raw data from csv
 
 
 ## Clean Data

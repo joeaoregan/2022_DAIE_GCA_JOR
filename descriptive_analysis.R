@@ -8,10 +8,10 @@
 # e.g. boxplot
 
 ####### clean it - get rid of errors
-# identify outliers
-# plot the graph
+####### identify outliers
+####### plot the graph
 # bar plots
-# box plots
+####### box plots
 # histograms
 # scatterplots
 
