@@ -137,6 +137,28 @@ During the study, PTSD was assessed using observer-rated (i.e., therapist-rated)
 
 ## Descriptive Statistics
 
+1. Frequency Distribution
+2. Central Tendency
+3. Variability
+
+### 1. Frequency Distibution
+
+1.1 Histograms
+
+1.2 Boxplots
+
+### 2. Central Tendancy
+
+2.1 Mean
+
+2.2 Median
+
+2.3 Mode
+
+### 3. Variability
+
+3.1 Standard Deviation
+
 ### Raw Data
 
 #### Load Raw Data from CSV File
@@ -349,7 +371,8 @@ animated_group
 
 ---
 
-### Histograms
+### 1. Frequency Distribution
+#### 1.1 Histograms
 
 Histograms for each group.
 
@@ -432,7 +455,7 @@ hist(animated_group$or_diff,
 
 ---
 
-### Boxplots
+#### 1.2 Boxplots
 
 Boxplots of each groups treatment difference between Start and End.
 
@@ -643,7 +666,11 @@ boxplot(animated_female$or_diff,
 
 ---
 
-### Mean
+### 2. Central Tendancy
+
+Mean, Median, Mode
+
+#### 2.1 Mean
 
 ##### Control Mean Values
 
@@ -783,8 +810,260 @@ mean_animated_or_female
 
 ---
 
+#### 2.2 Median
+
+##### Control Median Values
+
+Median Self-Report Difference
+
+```{r Control Median CPSS}
+median_control_cpss <- median(control_group$cpss_diff)
+median_control_cpss
+```
+
+Median Self-Report Difference - Male
+
+```{r Male Control Median CPSS}
+median_control_cpss_male <- median(control_male$cpss_diff)
+median_control_cpss_male
+```
+
+Median Self-Report Difference - Female
+
+```{r Female Control Median CPSS}
+median_control_cpss_female <- median(control_female$cpss_diff)
+median_control_cpss_female
+```
+
+Median Observer-Rated Difference
+
+```{r Control Median OR}
+median_control_or <- median(control_male$or_diff)
+median_control_or
+```
+
+Median Observer-Rated Difference - Male
+
+```{r Male Control Median OR}
+median_control_or_male <- median(control_female$or_diff)
+median_control_or_male
+```
+
+Median Observer-Rated Difference - Female
+
+```{r Female Control Median OR}
+median_control_or_female <- median(control_group$or_diff)
+median_control_or_female
+```
+
+---
+
+#### 2.3 Mode
+
+Function used to calculate mode (tutorialspoint):
+
+```{r function to get mode (tutorialspoint)}
+getmode <- function(v) {
+  uniqv <- unique(v)
+  uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+
+```
+
+---
+
+##### Control Mode Values
+
+Mode Self-Report Difference
+
+```{r Control Mode CPSS}
+mode_control_cpss <- getmode(control_group$cpss_diff)
+mode_control_cpss
+```
+
+Mode Self-Report Difference - Male
+
+```{r Male Control Mode CPSS}
+mode_control_cpss_male <- getmode(control_male$cpss_diff)
+mode_control_cpss_male
+```
+
+Mode Self-Report Difference - Female
+
+```{r Female Control Mode CPSS}
+mode_control_cpss_female <- getmode(control_female$cpss_diff)
+mode_control_cpss_female
+```
+
+Mode Observer-Rated Difference
+
+```{r Control Mode OR}
+mode_control_or <- getmode(control_male$or_diff)
+mode_control_or
+```
+
+Mode Observer-Rated Difference - Male
+
+```{r Male Control Mode OR}
+mode_control_or_male <- getmode(control_female$or_diff)
+mode_control_or_male
+```
+
+Mode Observer-Rated Difference - Female
+
+```{r Female Control Mode OR}
+mode_control_or_female <- getmode(control_group$or_diff)
+mode_control_or_female
+```
+
+---
+
+### 3. Central Tendancy
+
+#### 3.1 Standard Deviation
+
+##### Control Standard Deviation Values
+
+Standard Deviation Self-Report Difference
+
+```{r Control Standard Deviation CPSS}
+sd_control_cpss <- sd(control_group$cpss_diff)
+sd_control_cpss
+```
+
+Standard Deviation Self-Report Difference - Male
+
+```{r Male Control Standard Deviation CPSS}
+sd_control_cpss_male <- sd(control_male$cpss_diff)
+sd_control_cpss_male
+```
+
+Standard Deviation Self-Report Difference - Female
+
+```{r Female Control Standard Deviation CPSS}
+sd_control_cpss_female <- sd(control_female$cpss_diff)
+sd_control_cpss_female
+```
+
+Standard Deviation Observer-Rated Difference
+
+```{r Control Standard Deviation OR}
+sd_control_or <- sd(control_male$or_diff)
+sd_control_or
+```
+
+Standard Deviation Observer-Rated Difference - Male
+
+```{r Male Control Standard Deviation OR}
+sd_control_or_male <- sd(control_female$or_diff)
+sd_control_or_male
+```
+
+Standard Deviation Observer-Rated Difference - Female
+
+```{r Female Control Standard Deviation OR}
+sd_control_or_female <- sd(control_group$or_diff)
+sd_control_or_female
+```
+
+---
+
+##### Static Standard Deviation Values
+
+Standard Deviation Self-Report Difference
+
+```{r Static Standard Deviation CPSS}
+sd_static_cpss <- sd(static_group$cpss_diff)
+sd_static_cpss
+```
+
+Standard Deviation Self-Report Difference - Male
+
+```{r Male Static Standard Deviation CPSS}
+sd_static_cpss_male <- sd(static_male$cpss_diff)
+sd_static_cpss_male
+```
+
+Standard Deviation Self-Report Difference - Female
+
+```{r Female Static Standard Deviation CPSS}
+sd_static_cpss_female <- sd(static_female$cpss_diff)
+sd_static_cpss_female
+```
+
+Standard Deviation Observer-Rated Difference
+
+```{r Static Standard Deviation OR}
+sd_static_or <- sd(static_male$or_diff)
+sd_static_or
+```
+
+Standard Deviation Observer-Rated Difference - Male
+
+```{r Male Static Standard Deviation OR}
+sd_static_or_male <- sd(static_female$or_diff)
+sd_static_or_male
+```
+
+Standard Deviation Observer-Rated Difference - Female
+
+```{r Female Static Standard Deviation OR}
+sd_static_or_female <- sd(static_group$or_diff)
+sd_static_or_female
+```
+
+---
+
+##### Animated Standard Deviation Values
+
+Standard Deviation Self-Report Difference
+
+```{r Animated Standard Deviation CPSS}
+sd_animated_cpss <- sd(animated_group$cpss_diff)
+sd_animated_cpss
+```
+
+Standard Deviation Self-Report Difference - Male
+
+```{r Male Animated Standard Deviation CPSS}
+sd_animated_cpss_male <- sd(animated_male$cpss_diff)
+sd_animated_cpss_male
+```
+
+Standard Deviation Self-Report Difference - Female
+
+```{r Female Animated Standard Deviation CPSS}
+sd_animated_cpss_female <- sd(animated_female$cpss_diff)
+sd_animated_cpss_female
+```
+
+Standard Deviation Observer-Rated Difference
+
+```{r Animated Standard Deviation OR}
+sd_animated_or <- sd(animated_male$or_diff)
+sd_animated_or
+```
+
+Standard Deviation Observer-Rated Difference - Male
+
+```{r Male Animated Standard Deviation OR}
+sd_animated_or_male <- sd(animated_female$or_diff)
+sd_animated_or_male
+```
+
+Standard Deviation Observer-Rated Difference - Female
+
+```{r Female Animated Standard Deviation OR}
+sd_animated_or_female <- sd(animated_group$or_diff)
+sd_animated_or_female
+```
+
+---
+
+
 ## Inferential Statistics
 
+### T-test
 
 
 ## Statistical Tests
