@@ -1,4 +1,5 @@
 # Cleaning CSV Data
+# Joe O'Regan
 
 # columns:
 # gender, test_group, pre_trial_cpss, post_trial_cpss, pre_trial_or, post_trial_or

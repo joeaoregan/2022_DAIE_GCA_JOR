@@ -1,5 +1,8 @@
-## Control Groups
+# test graphs
+# 22/12/2022
 # Joe O'Regan
+
+## Control Groups
 
 if(!require("readr")) install.packages("readr")
 library(readr)
@@ -7,7 +10,7 @@ library(readr)
 
 ## Read Data
 
-raw_data <-read_csv("../daie_ca3_data_5.csv") # read raw data from csv
+raw_data <-read_csv("daie_ca3_data_5.csv") # read raw data from csv
 
 
 ## Clean Data
@@ -87,57 +90,11 @@ animated_cpss_median<- getmode(animated_group$cpss_diff)
 animated_or_median <- getmode(animated_group$or_diff)
 
 
-## Box Plots
-
-
-boxplot(control_group$cpss_diff)
-boxplot(control_group$or_diff)
-
-boxplot(static_group$cpss_diff)
-boxplot(static_group$or_diff)
-
-boxplot(animated_group$cpss_diff)
-boxplot(animated_group$or_diff)
-
-
-control_male <- filter(control_group, gender == "Male")
-control_female <- filter(control_group, gender == "Female")
-
-static_male <- filter(static_group, gender == "Male")
-static_female <- filter(static_group, gender == "Female")
-
-animated_male <- filter(animated_group, gender == "Male")
-animated_female <- filter(animated_group, gender == "Female")
-
-
-boxplot(control_male$cpss_diff)
-boxplot(control_female$cpss_diff)
-boxplot(control_male$or_diff)
-boxplot(control_female$or_diff)
-
-boxplot(static_male$cpss_diff)
-boxplot(static_female$cpss_diff)
-boxplot(static_male$or_diff)
-boxplot(static_female$or_diff)
-
-boxplot(animated_male$cpss_diff)
-boxplot(animated_female$cpss_diff)
-boxplot(animated_male$or_diff)
-boxplot(animated_female$or_diff)
-
-
-## Scatterplot - male close, female not matching - the ratings for or and cpss
-
-plot(x = data$cpss_diff, y = data$or_diff)
-
-plot(x = control_group$cpss_diff, y = control_group$or_diff)
-plot(x = control_male$cpss_diff, y = control_male$or_diff)
-plot(x = control_female$cpss_diff, y = control_female$or_diff)
-
-plot(x = static_group$cpss_diff, y = static_group$or_diff)
-plot(x = static_male$cpss_diff, y = static_male$or_diff)
-plot(x = static_female$cpss_diff, y = static_female$or_diff)
-
-plot(x = animated_group$cpss_diff, y = animated_group$or_diff)
-plot(x = animated_male$cpss_diff, y = animated_male$or_diff)
-plot(x = animated_female$cpss_diff, y = animated_female$or_diff)
+hist(control_group$cpss_diff,
+     main = "Control Group - Self-Report PTSD Level (12 Week Difference) Male & Female",
+     xlab = "12 Week Self-Report Measurement Difference",
+     ylab = "Patient Rating Difference Frequency")
+hist(control_group$or_diff,
+     main = "Control Group - Observer Rated PTSD Level (12 Week Difference) Male & Female",
+     xlab = "Observer Rated Difference",
+     ylab = "Patient Rating Difference Frequency")

@@ -1,4 +1,4 @@
-## RNORM
+## historgrams + RNORM test
 # Joe O'Regan
 # 23/12/2022
 

@@ -1,0 +1,40 @@
+---
+title: "testtable"
+author: "Joe O'Regan"
+date: "2022-12-23"
+output: html_document
+---
+
+## Load data
+
+```{r Load Data, echo=TRUE}
+csv_file_name = "daie_ca3_data_5.csv"
+raw_data <- read.csv(csv_file_name)
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r Inspect Head, Tail & Structure, echo=TRUE}
+# show structure
+# str(raw_data)
+
+# show first N
+# head(raw_data, 10)
+# show last N
+# tail(raw_data, 5)
+
+# show a "prettier" paged table
+rmarkdown::paged_table(raw_data)
+
+# show a "prettier" paged table but ONLY first 8 rows
+# head_raw_data <- head(raw_data, 8)
+# rmarkdown::paged_table(head_raw_data)
+
+# show a "prettier" paged table using kable() with caption and decimal digit max length and alignment = centre
+knitr::kable(raw_data,
+  align = c('c'), # a vector with 'c', 'l', or 'r' values
+  digits = 2,
+  caption = "A caption for your table here")
+```

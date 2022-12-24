@@ -1,8 +1,9 @@
 # DAIE GCA JOR MG
 # 12/12/2022
+
 *.html
 .Rproj.user
-test*.R
-test*.Rmd
+#test*.R
+#test*.Rmd
 .Rhistory
 .RData

@@ -1,3 +1,7 @@
+# Joe O'Regan
+# 24/12/2022
+
+
 
 Measures of central tendency
 
