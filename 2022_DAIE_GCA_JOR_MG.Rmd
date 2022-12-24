@@ -1,22 +1,26 @@
 ---
 title: "DAIE Pair Project"
-subtitle: Descriptive & Inferential Analysis of a Jungian Sandplay VR Project
 author: "Joe O'Regan and Michael Galbraith"
 date: "2022-12-12"
 output:
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
+  html_notebook:
+    # theme: darkly
+    toc: yes
+    toc_depth: 2
+    # toc_float: yes
+    number_sections: yes
+    # code_folding: hide
   html_document:
     toc: yes
     toc_depth: '2'
     df_print: paged
     theme: darkly
-    code_folding: hide
-  html_notebook:
-    theme: darkly
-    toc: yes
-    toc_depth: 2
-    toc_float: true
-    number_sections: true
-    code_folding: hide
+    # code_folding: hide
+subtitle: Descriptive & Inferential Analysis of a Jungian Sandplay VR Project
+always_allow_html: true
 ---
 
 ---
@@ -1064,6 +1068,73 @@ sd_animated_or_female
 ## Inferential Statistics
 
 ### T-test
+
+
+```{r t test testing}
+
+if(!require("tidyr")) install.packages("tidyr")
+library(tidyr)
+
+# 95% confidence level is default setting
+data %>% 
+  select(gender, cpss_diff) %>% 
+  filter(gender %in% c("Male", "Female")) %>% 
+  drop_na(cpss_diff) %>% 
+  t.test(cpss_diff ~ gender, data = .)
+
+control_group %>% 
+  select(gender, cpss_diff) %>% 
+  filter(gender %in% c("Male", "Female")) %>% 
+  drop_na(cpss_diff) %>% 
+  t.test(cpss_diff ~ gender, data = .)
+
+static_group %>% 
+  select(gender, cpss_diff) %>% 
+  filter(gender %in% c("Male", "Female")) %>% 
+  drop_na(cpss_diff) %>% 
+  t.test(cpss_diff ~ gender, data = .)
+
+animated_group %>% 
+  select(gender, cpss_diff) %>% 
+  filter(gender %in% c("Male", "Female")) %>% 
+  drop_na(cpss_diff) %>% 
+  t.test(cpss_diff ~ gender, data = .)
+
+
+data %>% 
+  select(gender, or_diff) %>% 
+  filter(gender %in% c("Male", "Female")) %>% 
+  drop_na(or_diff) %>% 
+  t.test(or_diff ~ gender, data = .)
+
+control_group %>% 
+  select(gender, or_diff) %>% 
+  filter(gender %in% c("Male", "Female")) %>% 
+  drop_na(or_diff) %>% 
+  t.test(or_diff ~ gender, data = .)
+
+static_group %>% 
+  select(gender, or_diff) %>% 
+  filter(gender %in% c("Male", "Female")) %>% 
+  drop_na(or_diff) %>% 
+  t.test(or_diff ~ gender, data = .)
+
+animated_group %>% 
+  select(gender, or_diff) %>% 
+  filter(gender %in% c("Male", "Female")) %>% 
+  drop_na(or_diff) %>% 
+  t.test(or_diff ~ gender, data = .)
+
+
+
+data %>% 
+  select(gender, cpss_diff) %>% 
+  filter(gender %in% c("Male", "Female")) %>% 
+  drop_na(cpss_diff) %>% 
+  t.test(cpss_diff ~ gender, data = .)
+
+
+```
 
 
 ## Statistical Tests
