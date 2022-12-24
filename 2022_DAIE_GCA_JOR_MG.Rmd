@@ -21,8 +21,6 @@ output:
 
 ---
 
-<TODO-CAN-HAVE-THREE-HASH-SYMBOLS-FOR-HEADINGS-WITHOUT-MESSING-UP-TABLE-OF-CONTENTS>
-
 ### Repo
 
 <https://github.com/joeaoregan/2022_DAIE_GCA_JOR_MG>
@@ -100,7 +98,6 @@ data_not_in_range <- raw_data %>%
 
 rmarkdown::paged_table(data_not_in_range)
 ```
-
 
 ---
 
@@ -189,15 +186,19 @@ data
 
 # Abstract
 
-<TODO-REPLACE> summary of the contents
-
 ## Aim and Rationale
 
-<TODO-HAVE-NO-CLUE-WHAT-GOES-HERE>
+The purpose of this assignment was to form a hypothesis based on data collected at the beginning and end of a 12 week period of Cognitive Behavioural Therapy (CBT). The data was collected to investigate the effect of Jungian Sandplay therapy in a Virtual Reality environment. Patients were being treated for PTSD. Psychological interventions like this have been shown to have a positive impact.
 
 ## Participants and Setting
 
-<TODO-SHITE-ABOUT-THE-PATIENTS>
+The study consisted of 150 patients divided equally into 3 groups. 
+An equal representation of male and female patients is present in each group.
+All patients were young adults aged 18 to 25 with no age information recorded.
+
+* Control (Cognitive Behavioural Therapy patients who did not use the VR app)
+* Static (Patients who used a non-animated version of the VR app)
+* Animated (Patients who used the animated version of the VR app)
 
 ## Experiment Design
 
@@ -205,7 +206,12 @@ data
 
 ## Results Gathering
 
-<TODO-NEEDS-PREVIOUS-STEP>
+First, cleaning the data to remove errors such as typos and missing values.
+We used Descriptive Statistics to examine and look at the data. 
+Looking for outliers in the data.
+Form a hypothesis based on visual inspection of the data in graphs.
+Then using Inferential Statistics to make predictions and generalizations based on the data.
+Performing Hypothesis tests to check the validity of the hypothesis based on the data provided.
 
 ## Major Findings
 
