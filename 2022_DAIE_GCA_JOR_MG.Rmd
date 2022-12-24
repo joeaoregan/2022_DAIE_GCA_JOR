@@ -382,7 +382,7 @@ animated_group
 
 ### Histograms
 
-Histograms for each group
+Histograms for each group.
 
 #### Control
 
@@ -414,6 +414,7 @@ hist(control_group$or_diff,
 # hist(rnorm(control_group, mean_control_or, sd_control_or))
 ```
 
+---
 
 #### Static
 
@@ -436,6 +437,7 @@ hist(static_group$or_diff,
      ylab="Patient Frequency")
 ```
 
+---
 
 #### Animated
 
@@ -459,14 +461,15 @@ hist(animated_group$or_diff,
      ylab="Patient Frequency")
 ```
 
+---
 
 ### Boxplots
 
+Boxplots of each groups treatment difference between Start and End.
+
+Outside the boxplot whiskers, outliers are visible for all groups and for both measurement methods.
+
 #### Control Group
-
-Boxplots of Control Group Treatment Difference between Start and End.
-
-Some outliers visible for both measurement methods outside the boxplot whiskers.
 
 ##### Self-Report (CPPS)
 
@@ -486,10 +489,6 @@ boxplot(control_group$or_diff,
 
 #### Static Group
 
-Boxplots of Static Group Treatment Difference between Start and End.
-
-Some outliers visible for both measurement methods outside the boxplot whiskers.
-
 ##### Self-Report (CPPS)
 
 ```{r Static CPSS Boxplot}
@@ -507,10 +506,6 @@ boxplot(static_group$or_diff,
 ---
 
 #### Animated Group
-
-Boxplots of Animated Group Treatment Difference between Start and End.
-
-Some outliers visible for both measurement methods outside the boxplot whiskers.
 
 ##### Self-Report (CPPS)
 
