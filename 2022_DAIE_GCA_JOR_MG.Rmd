@@ -27,6 +27,151 @@ output:
 
 ---
 
+# Abstract
+
+## Aim and Rationale
+
+The purpose of this assignment was to form a hypothesis based on data collected at the beginning and end of a 12 week period of Cognitive Behavioural Therapy (CBT). The data was collected to investigate the effect of Jungian Sandplay therapy in a Virtual Reality environment. Patients were being treated for PTSD. Psychological interventions like this have been shown to have a positive impact.
+
+## Participants and Setting
+
+The study consisted of 150 patients divided equally into 3 groups. 
+An equal representation of male and female patients is present in each group.
+All patients were young adults aged 18 to 25 with no age information recorded.
+
+* Control (Cognitive Behavioural Therapy patients who did not use the VR app)
+* Static (Patients who used a non-animated version of the VR app)
+* Animated (Patients who used the animated version of the VR app)
+
+
+
+
+
+## Experiment Design   XXX To do XXX
+
+<TODO-STILL-LOOKING-AT-THIS>
+
+## Results Gathering
+
+First, cleaning the data to remove errors such as typos and missing values.
+We used Descriptive Statistics to examine and look at the data. 
+Looking for outliers in the data.
+Form a hypothesis based on visual inspection of the data in graphs.
+Then using Inferential Statistics to make predictions and generalizations based on the data.
+Performing Hypothesis tests to check the validity of the hypothesis based on the data provided.
+
+## Major Findings   XXX To do XXX
+
+
+
+
+
+<TODO-NEEDS-PREVIOUS-STEP>
+
+
+
+
+
+## Findings / Implications   XXX To do XXX
+
+<TODO-NEEDS-PREVIOUS-STEP>
+
+---
+
+# Introduction
+
+## Topic and Context
+
+<MG-EDIT-ANY-WAY-YOU-LIKE>
+Post‐traumatic stress disorder (PTSD) is seen as one of the most common psychiatric disorder to follow after exposure to a traumatic event. It has been recorded (by ptsd.va.gov) that approx. 6% of the population will have PTSD at some point in time. It has been known that trauma-focused cognitive behaviour therapy is the best-validated threat for PTSD. 
+Although not all PTSD patients respond adequately to this type of treatment. There has also been studies that most people with PTSD do not access evidence-based treatment, and this situation is much worse for lower and middle income countries. This identify that there is still a lot to overcome in the style of treatment to better improve people’s lives with PTSD and remains a challenge.
+
+<JOE>
+Observer-Rated and Self-Report methods of measuring patient PTSD/anxiety levels were used to assess patient PTSD levels across three groups of fifty patients. Each group has an equal numbers of Male and Female participant, twenty-five each. 
+
+The age range for this hypothetical situation doesn't matter as it hasn't been recorded, but I suppose if this was a real world situation there might be some ethical issues, but it's not sure it's all made up as far as I know. 
+
+I suppose the real lesson in any college assignment is how much unnecessary information we can filter through, as a student, before you stop caring because life's too short.
+
+There was a 12 week interval between the pre and post trial measurements, or the trial start and end. The types of groups really don't matter, they are just variable names for me. They might as well be x, y and z. What the study is about doesn't matter either, they'll make more readable labels for graphs later. All the waffle about PTSD kind of takes away from the fact this is basically just a numbers and graphs exercise, so I'm not wasting my time rehashing the stuff from the CA spec.
+
+**Groups:**
+
+* Control (No VR)
+* Static (Non-Animated VR)
+* Animated (Animated VR)
+
+**Gender: (Data Limited)**
+
+* Male
+* Female
+
+**Measurements:**
+
+* Self-Report:
+    + Start PTSD Level (pre_trial_cpss)
+    + End PTSD Level (post_trial_cpss)
+* Observer-Rated:
+    + Start PTSD Level (pre_trial_or)
+    + End PTSD Level (post_trial_or)
+
+
+## Rationale
+
+<MG>
+While CBT is effective in the management of symptoms of PTSD, it doesn't specifically deal with the underlying cause. Furthermore, not all patients respond to CBT. Therefore, in an effort to improve the outcomes for patients with PTSD we aim to explore the effectiveness of virtual reality assisted cognitive behavioral therapy compared to standard CBT practices.
+
+<JOR>
+Kind of simple. We only have a small amount of information, the change in PTSD Levels after 12 weeks, with one possible variable gender that may influence the outcome. Using 3 different treatment methods, with 2 different ratings. 
+
+So, we would expect there is either some change, or no change after 12 weeks. Each of the methods may have different outcomes, and the gender of the patients may be a factor in how they respond to each treatment, or to treatment in general by any of the 3 treatments.
+
+## Hypothesis
+
+<MG>
+Null hypothesis (H0): there is no difference in terms of CPSS scores between the animated group and control group, or the static group and the control group
+
+Alternative hypothesis (H1): there is a significant difference in terms of CPSS scores between the animated group and control group, or the static group and the control group
+
+<JOR>
+Average PTSD levels for both observer rated and self-reported should improve over a 12 week period.
+
+H0 (Null hypothesis): The average PTSD levels for both Observer-Rated and Self Reported methods should improve over a 12 week period.
+
+H1 (Alternative): The average PTSD levels stay the same or get worse.
+
+---
+
+# Method
+
+## Participants
+
+The participants involved in the study were all young adults with PTSD in the age range of 18 - 25 years. There were 150 students, equally divided into 75 males and 75 females.
+
+## Design
+
+The patients were allocated into one of three groups; 
+  
+  - Control, static (traditional CBT, no VR)
+  - Static (non-animated model content, VR) 
+  - Animated (animated model content, VR)
+
+Non-animated means the objects in the virtual environment would be still and not interact.
+Animated means when you add objects onto the Jungian Sand play they would interact and move around the environment
+
+## Materials
+
+The 3 groups underwent 12 weeks of treatment for 50 minutes per week with a therapist. During that time the patients either underwent traditional CBT; or used one of the two (quality) versions of the VR app.
+
+## Procedure
+
+During the study, PTSD was assessed using observer-rated (i.e., therapist-rated) and self-report (i.e., Child PTSD Symptom Scale Self-Report Version (CPSS-SR)) measurements, respectively. Both measurements are scaled to the range of 0 to 10. Measurements were taken at the start and end of the study.
+
+
+# Results
+
+## Descriptive Statistics
+
 ### Raw Data
 
 #### Load Raw Data from CSV File
@@ -147,7 +292,6 @@ typos <- raw_data %>%
   filter(gender == "Feale" | test_group == "Anmated")
 typos
 ```
-
 #### Show Rows with Typos or Missing Data
 
 Show all errors. Only Typos and Missing Data have been identified.
@@ -183,247 +327,61 @@ data <- raw_data %>%
 data
 ```
 
+### Add Columns for Difference in Pre and Post values
 
-# Abstract
+#### Self-Report Measures
 
-## Aim and Rationale
-
-The purpose of this assignment was to form a hypothesis based on data collected at the beginning and end of a 12 week period of Cognitive Behavioural Therapy (CBT). The data was collected to investigate the effect of Jungian Sandplay therapy in a Virtual Reality environment. Patients were being treated for PTSD. Psychological interventions like this have been shown to have a positive impact.
-
-## Participants and Setting
-
-The study consisted of 150 patients divided equally into 3 groups. 
-An equal representation of male and female patients is present in each group.
-All patients were young adults aged 18 to 25 with no age information recorded.
-
-* Control (Cognitive Behavioural Therapy patients who did not use the VR app)
-* Static (Patients who used a non-animated version of the VR app)
-* Animated (Patients who used the animated version of the VR app)
-
-## Experiment Design
-
-<TODO-STILL-LOOKING-AT-THIS>
-
-## Results Gathering
-
-First, cleaning the data to remove errors such as typos and missing values.
-We used Descriptive Statistics to examine and look at the data. 
-Looking for outliers in the data.
-Form a hypothesis based on visual inspection of the data in graphs.
-Then using Inferential Statistics to make predictions and generalizations based on the data.
-Performing Hypothesis tests to check the validity of the hypothesis based on the data provided.
-
-## Major Findings
-
-<TODO-NEEDS-PREVIOUS-STEP>
-
-## Findings / Implications
-
-<TODO-NEEDS-PREVIOUS-STEP>
-
----
-
-# Introduction
-
-## Topic and Context
-
-<MG-EDIT-ANY-WAY-YOU-LIKE>
-Post‐traumatic stress disorder (PTSD) is seen as one of the most common psychiatric disorder to follow after exposure to a traumatic event. It has been recorded (by ptsd.va.gov) that approx. 6% of the population will have PTSD at some point in time. It has been known that trauma-focused cognitive behaviour therapy is the best-validated threat for PTSD. 
-Although not all PTSD patients respond adequately to this type of treatment. There has also been studies that most people with PTSD do not access evidence-based treatment, and this situation is much worse for lower and middle income countries. This identify that there is still a lot to overcome in the style of treatment to better improve people’s lives with PTSD and remains a challenge.
-
-<JOE>
-Observer-Rated and Self-Report methods of measuring patient PTSD/anxiety levels were used to assess patient PTSD levels across three groups of fifty patients. Each group has an equal numbers of Male and Female participant, twenty-five each. 
-
-The age range for this hypothetical situation doesn't matter as it hasn't been recorded, but I suppose if this was a real world situation there might be some ethical issues, but it's not sure it's all made up as far as I know. 
-
-I suppose the real lesson in any college assignment is how much unnecessary information we can filter through, as a student, before you stop caring because life's too short.
-
-There was a 12 week interval between the pre and post trial measurements, or the trial start and end. The types of groups really don't matter, they are just variable names for me. They might as well be x, y and z. What the study is about doesn't matter either, they'll make more readable labels for graphs later. All the waffle about PTSD kind of takes away from the fact this is basically just a numbers and graphs exercise, so I'm not wasting my time rehashing the stuff from the CA spec.
-
-**Groups:**
-
-* Control (No VR)
-* Static (Non-Animated VR)
-* Animated (Animated VR)
-
-**Gender: (Data Limited)**
-
-* Male
-* Female
-
-**Measurements:**
-
-* Self-Report:
-    + Start PTSD Level (pre_trial_cpss)
-    + End PTSD Level (post_trial_cpss)
-* Observer-Rated:
-    + Start PTSD Level (pre_trial_or)
-    + End PTSD Level (post_trial_or)
-
-
-## Rationale
-
-<MG>
-While CBT is effective in the management of symptoms of PTSD, it doesn't specifically deal with the underlying cause. Furthermore, not all patients respond to CBT. Therefore, in an effort to improve the outcomes for patients with PTSD we aim to explore the effectiveness of virtual reality assisted cognitive behavioral therapy compared to standard CBT practices.
-
-<JOR>
-Kind of simple. We only have a small amount of information, the change in PTSD Levels after 12 weeks, with one possible variable gender that may influence the outcome. Using 3 different treatment methods, with 2 different ratings. 
-
-So, we would expect there is either some change, or no change after 12 weeks. Each of the methods may have different outcomes, and the gender of the patients may be a factor in how they respond to each treatment, or to treatment in general by any of the 3 treatments.
-
-## Hypothesis
-
-<MG>
-Null hypothesis (H0): there is no difference in terms of CPSS scores between the animated group and control group, or the static group and the control group
-
-Alternative hypothesis (H1): there is a significant difference in terms of CPSS scores between the animated group and control group, or the static group and the control group
-
-<JOR>
-Average PTSD levels for both observer rated and self-reported should improve over a 12 week period.
-
-H0 (Null hypothesis): The average PTSD levels for both Observer-Rated and Self Reported methods should improve over a 12 week period.
-
-H1 (Alternative): The average PTSD levels stay the same or get worse.
-
----
-
-# Method
-
-## Participants
-
-The participants involved in the study were all young adults with PTSD in the age range of 18 - 25 years. There were 150 students, equally divided into 75 males and 75 females.
-
-## Design
-
-The patients were allocated into one of three groups; 
-  
-  - Control, static (traditional CBT, no VR)
-  - Static (non-animated model content, VR) 
-  - Animated (animated model content, VR)
-
-Non-animated means the objects in the virtual environment would be still and not interact.
-Animated means when you add objects onto the Jungian Sand play they would interact and move around the environment
-
-## Materials
-
-The 3 groups underwent 12 weeks of treatment for 50 minutes per week with a therapist. During that time the patients either underwent traditional CBT; or used one of the two (quality) versions of the VR app.
-
-## Procedure
-
-During the study, PTSD was assessed using observer-rated (i.e., therapist-rated) and self-report (i.e., Child PTSD Symptom Scale Self-Report Version (CPSS-SR)) measurements, respectively. Both measurements are scaled to the range of 0 to 10. Measurements were taken at the start and end of the study.
-
-
-# Results
-
-## Descriptive Statistics
-
-<TODO-THIS-NEEDS-TO-BE-DONE-IT-SHOULD-BE-EASY>
-
-plots/charts
-e.g. boxplot
-
-* clean it - get rid of errors
-* identify outliers
-* plot the graph
-  - bar plots
-  - box plots
-  - histograms
-  - scatterplots
-  
-* once we plot, look at things we can begin to explore data
-* begin to develop hypothesis
-* then run an experiment
-* infer something from experiment
-
-
-Measures of central tendency
-
-* mean
-
-##### mean()
-##### trim - drops values - 0.3, drops 3 values from each end
-##### <data>.mean <- mean(<variable>, trim = 0.3)
-
-
-```{r}
-pre_trial_cpss_mean <- mean(raw_data$pre_trial_cpss)
-pre_trial_cpss_mean
-
-pre_trial_cpss_std <- sd(raw_data$pre_trial_cpss)
-pre_trial_cpss_std
-pre_trial_cpss <- rnorm(150, pre_trial_cpss_mean, pre_trial_cpss_std)
-hist(pre_trial_cpss)
-
-# clean data? 1 value missing for this variable
-
-post_trial_cpss_mean <- mean(raw_data$post_trial_cpss)
-post_trial_cpss_mean
-#post_trial_cpss_std <- sd(raw_data$post_trial_cpss)
-#post_trial_cpss_std
-#post_trial_cpss <- rnorm(150, post_trial_cpss_mean, post_trial_cpss_std)
-#hist(post_trial_cpss)
-
-pre_trial_or_mean <- mean(raw_data$pre_trial_or)
-pre_trial_or_mean
-pre_trial_or_sd <- sd(raw_data$pre_trial_or)
-pre_trial_or_sd
-pre_trial_or <- rnorm(150, pre_trial_or_mean, pre_trial_or_sd)
-hist(pre_trial_or)
-
-post_trial_or_mean <- mean(raw_data$post_trial_or)
-post_trial_or_mean
-post_trial_or_sd <- sd(raw_data$post_trial_or)
-post_trial_or_sd
-post_trial_or <- rnorm(150, post_trial_or_mean, post_trial_or_sd)
-hist(post_trial_or)
-
-
+```{r Create column for difference in self-report measures}
+data$cpss_diff <- data$pre_trial_cpss - data$post_trial_cpss
 ```
 
-* median
+#### Observer-Rated Measures
 
-```{r}
-pre_trial_cpss_mode <- mean(raw_data$pre_trial_cpss)
-pre_trial_cpss_mean
-pre_trial_cpss_std <- sd(raw_data$pre_trial_cpss)
-pre_trial_cpss_std
-pre_trial_cpss <- rnorm(150, pre_trial_cpss_mean, pre_trial_cpss_std)
-hist(pre_trial_cpss)
-
-# clean data? 1 value missing for this variable
-#post_trial_cpss_mean <- mean(raw_data$post_trial_cpss)
-# na.rm - removes null values
-post_trial_cpss_mean <- mean(raw_data$post_trial_cpss, na.rm = TRUE)
-#post_trial_cpss_mean
-#post_trial_cpss_std <- sd(raw_data$post_trial_cpss)
-#post_trial_cpss_std
-#post_trial_cpss <- rnorm(150, post_trial_cpss_mean, post_trial_cpss_std)
-#hist(post_trial_cpss)
-
-pre_trial_or_mean <- mean(raw_data$pre_trial_or)
-pre_trial_or_mean
-pre_trial_or_sd <- sd(raw_data$pre_trial_or)
-pre_trial_or_sd
-pre_trial_or <- rnorm(150, pre_trial_or_mean, pre_trial_or_sd)
-hist(pre_trial_or)
-
-post_trial_or_mean <- mean(raw_data$post_trial_or)
-post_trial_or_mean
-post_trial_or_sd <- sd(raw_data$post_trial_or)
-post_trial_or_sd
-post_trial_or <- rnorm(150, post_trial_or_mean, post_trial_or_sd)
-hist(post_trial_or)
-
-
+```{r Create column for difference in observer-rated measures}
+data$or_diff <- data$pre_trial_or - data$post_trial_or
 ```
 
-* mode
+#### Table with difference columns
 
-Measures of variability
+```{r View clean data table with difference columns}
+data
+```
 
-* standard deviation
-* variance
-* minimum and maximum variables
+### Split Clean Data into Groups
+
+The 150 patients are divided into 3 groups of 50 in the Raw Data.
+Each group had an equal number of male and female participants.
+In the cleaned data 1 record has been removed.
+
+* Control (traditional CBT, no VR)
+* Static (non-animated model content, VR)
+* Animated (animated model contend, VR)
+
+#### Control
+
+The control group has 1 less patient record after cleaning the data
+
+```{r Create Control Group}
+control_group <- filter(data, test_group == "Control")
+control_group
+```
+
+#### Static
+
+```{r Create Static Group}
+static_group <- filter(data, test_group == "Static")
+static_group
+```
+
+#### Animated
+
+```{r Create Animated Group}
+animated_group <- filter(data, test_group == "Animated")
+animated_group
+```
+
+
+
 
 ## Inferential Statistics
 

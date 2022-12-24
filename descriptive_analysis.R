@@ -7,7 +7,7 @@
 # plots/charts
 # e.g. boxplot
 
-# clean it - get rid of errors
+####### clean it - get rid of errors
 # identify outliers
 # plot the graph
 # bar plots
