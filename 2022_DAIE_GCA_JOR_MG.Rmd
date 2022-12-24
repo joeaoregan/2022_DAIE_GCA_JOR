@@ -386,48 +386,77 @@ Histograms for each group
 
 #### Control
 
-```{r}
-## Control
-# CPSS
+##### Histogram of Control Group Self-Report (CPPS) Treatment Difference between Start and End
+
+```{r Control CPPS Difference Histogram}
 mean_control_cpss <- mean(control_group$cpss_diff)
 sd_control_cpss <- sd(control_group$cpss_diff)
-hist(control_group$cpss_diff) # right
+
+# right skewed
+hist(control_group$cpss_diff, 
+     main="Histogram of Control CPPS Treatment Difference",
+     xlab="Control Group: Self-Report (CPPS) Difference",
+     ylab="Patient Frequency")
 # hist(rnorm(control_group, mean_control_cpss, sd_control_cpss))  # normal distibution (random sample values generated)
+```
 
-# OR 
+##### Histogram of Control Group Observer-Rated (OR) Treatment Difference between Start and End
+
+```{r Control OR Difference Histogram}
 mean_control_or <- mean(control_group$or_diff)
-sd_control_or<- sd(control_group$or_diff)
-hist(control_group$or_diff) # symmetric? / right?
+sd_control_or <- sd(control_group$or_diff)
+
+# symmetric? / right?
+hist(control_group$or_diff, 
+     main="Histogram of Control OR Treatment Difference",
+     xlab="Control Group: Observer-Rated (OR) Difference",
+     ylab="Patient Frequency")
 # hist(rnorm(control_group, mean_control_or, sd_control_or))
+```
 
 
-## Static
-# CPSS
-mean_static_cpss <- mean(static_group$cpss_diff)
-sd_static_cpss <- sd(static_group$cpss_diff)
-hist(static_group$cpss_diff) # left skewed (outliers on right)
-# hist(rnorm(static_group, mean_static_cpss, sd_static_cpss))
+#### Static
 
-# OR 
-mean_static_or <- mean(static_group$or_diff)
-sd_static_or<- sd(static_group$or_diff)
-hist(static_group$or_diff) # left skewed
-# hist(rnorm(static_group, mean_static_or, sd_static_or))
+##### Histogram of Static Group Self-Report (CPPS) Treatment Difference between Start and End
+
+```{r Static CPPS Difference Histogram}
+# left skewed (outliers on right)
+hist(static_group$cpss_diff, 
+     main="Histogram of Static CPPS Treatment Difference",
+     xlab="Static Group: Self-Report (CPPS) Difference",
+     ylab="Patient Frequency")
+```
+
+##### Histogram of Static Group Observer-Rated (OR) Treatment Difference between Start and End
+
+```{r Static OR Difference Histogram}
+hist(static_group$or_diff, 
+     main="Histogram of Static OR Treatment Difference",
+     xlab="Static Group: Observer-Rated (OR) Difference",
+     ylab="Patient Frequency")
+```
 
 
-## Animated
-# CPSS
-mean_animated_cpss <- mean(animated_group$cpss_diff)
-sd_animated_cpss <- sd(animated_group$cpss_diff)
-hist(animated_group$cpss_diff) # left skewed
-# hist(rnorm(animated_group, mean_animated_cpss, sd_animated_cpss))
+#### Animated
 
-# OR 
-mean_animated_or <- mean(animated_group$or_diff)
-sd_animated_or<- sd(animated_group$or_diff)
-hist(animated_group$or_diff) # left skewed
-# hist(rnorm(animated_group, mean_animated_or, sd_animated_or))
+##### Histogram of Animated Group Self-Report (CPPS) Treatment Difference between Start and End
 
+```{r Animated CPPS Difference Histogram}
+# left skewed
+hist(animated_group$cpss_diff, 
+     main="Histogram of Animated CPPS Treatment Difference",
+     xlab="Animated Group: Self-Report (CPPS) Difference",
+     ylab="Patient Frequency")
+```
+
+##### Histogram of Animated Group Observer-Rated (OR) Treatment Difference between Start and End
+
+```{r Animated OR Difference Histogram}
+# left skewed
+hist(animated_group$or_diff, 
+     main="Histogram of Animated OR Treatment Difference",
+     xlab="Animated Group: Observer-Rated (OR) Difference",
+     ylab="Patient Frequency")
 ```
 
 
@@ -502,3 +531,7 @@ Cognitive behavioural therapy (CBT) – PTSD UK. 2022. Cognitive behavioural the
 **Statistical Analysis**
 
 WallStreetMojo. 2022. Statistical Analysis. [ONLINE] Available at: https://www.wallstreetmojo.com/statistical-analysis/. [Accessed 23 December 2022].
+
+**Histograms**
+
+Data Camp. 2022. How to Make a Histogram with Basic R Tutorial. [ONLINE] Available at: https://www.datacamp.com/tutorial/make-histogram-basic-r. [Accessed 24 December 2022].
