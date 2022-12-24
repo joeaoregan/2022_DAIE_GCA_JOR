@@ -460,6 +460,71 @@ hist(animated_group$or_diff,
 ```
 
 
+### Boxplots
+
+#### Control Group
+
+Boxplots of Control Group Treatment Difference between Start and End.
+
+Some outliers visible for both measurement methods outside the boxplot whiskers.
+
+##### Self-Report (CPPS)
+
+```{r Control CPSS Boxplot}
+boxplot(control_group$cpss_diff, 
+        main="Control Self-Report (CPSS) Boxplot")
+```
+
+##### Observer-Rated (OR)
+
+```{r Control OR Boxplot}
+boxplot(control_group$or_diff, 
+        main="Control Observer-Rated (OR) Boxplot")
+```
+
+---
+
+#### Static Group
+
+Boxplots of Static Group Treatment Difference between Start and End.
+
+Some outliers visible for both measurement methods outside the boxplot whiskers.
+
+##### Self-Report (CPPS)
+
+```{r Static CPSS Boxplot}
+boxplot(static_group$cpss_diff, 
+        main="Static Self-Report (CPSS) Boxplot")
+```
+
+##### Observer-Rated (OR)
+
+```{r Static OR Boxplot}
+boxplot(static_group$or_diff, 
+        main="Static Observer-Rated (OR) Boxplot")
+```
+
+---
+
+#### Animated Group
+
+Boxplots of Animated Group Treatment Difference between Start and End.
+
+Some outliers visible for both measurement methods outside the boxplot whiskers.
+
+##### Self-Report (CPPS)
+
+```{r Animated CPSS Boxplot}
+boxplot(animated_group$cpss_diff, 
+        main="Animated Self-Report (CPSS) Boxplot")
+```
+
+##### Observer-Rated (OR)
+
+```{r Animated OR Boxplot}
+boxplot(animated_group$or_diff, 
+        main="Animated Observer-Rated (OR) Boxplot")
+```
 
 
 ## Inferential Statistics
