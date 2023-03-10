@@ -1,4 +1,4 @@
 # Data Analytics for Immersive Environments
-## Pair Project
+## CA Project
 
 - Joe O'Regan
